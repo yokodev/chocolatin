@@ -39,7 +39,7 @@ const baseProvider = () => ({
   resolve: {
     extensions: [],
   },
-  externals: [/^[a-z\-0-9]+$/],
+  externals: [],
   module: {
     loaders: [],
   },
