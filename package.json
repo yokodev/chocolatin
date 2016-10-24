@@ -1,11 +1,11 @@
 {
   "name": "chocolatin",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "Make life in your project",
   "scripts": {
     "test": "npm run jest -- --verbose",
     "testw": "npm run jest -- --watch",
-    "up": "npm run yarn update",
+    "up": "npm run yarn upgrade",
     "jest": "jest",
     "yarn": "yarn"
   },
@@ -31,15 +31,15 @@
     "yarn": "^0.16.1"
   },
   "dependencies": {
-    "ramda": "^0.22.1",
     "assets-webpack-plugin": "^3.5.0",
     "clean-webpack-plugin": "^0.1.13",
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.24.0",
     "progress-bar-webpack-plugin": "^1.9.0",
+    "ramda": "^0.22.1",
+    "webpack": "^2.1.0-beta.25",
     "webpack-browser-plugin": "^1.0.12",
-    "webpack-dashboard": "^0.2.0",
-    "webpack": "^2.1.0-beta.25"
+    "webpack-dashboard": "^0.2.0"
   },
   "engines": {
     "node": ">= 6",
