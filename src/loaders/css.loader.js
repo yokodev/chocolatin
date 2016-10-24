@@ -2,12 +2,7 @@
 
 const ext = ['.css'];
 
-const wrapper = {
-  postcss: [
-    require('autoprefixer')({ browsers: ['last 2 versions', 'ie > 8'] }),
-    require('css-mqpacker')(),
-  ],
-};
+const wrapper = {};
 
 const pre = {};
 
@@ -18,10 +13,17 @@ const loader = {
 
 const post = {};
 
-module.exports = {
+/**
+ * PostCSS example :
+ [
+ require('autoprefixer')({ browsers: ['last 2 versions', 'ie > 8'] }),
+ require('css-mqpacker')(),
+ ]
+ */
+module.exports = postcss => ({
   ext,
-  wrapper,
+  wrapper: Object.assign(wrapper, { postcss: [...postcss] }),
   pre,
   loader,
   post,
-};
+});
