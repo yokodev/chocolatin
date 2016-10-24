@@ -16,7 +16,7 @@ module.exports = burn(
     Watch(),
   ],
   [
-    TypeScript
+    TypeScript(),
   ],
   [
     Define('development'),

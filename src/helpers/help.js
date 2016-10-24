@@ -29,7 +29,7 @@ const sort = cond([
   [T, always(0)],
 ]);
 
-const mapProp = pipe(map, prop);
+const mapProp = x => map(prop(x));
 
 const hasLoader = seek => loader =>
   loader.loaders ? loader.loaders.includes(seek) : loader.loader === seek;
