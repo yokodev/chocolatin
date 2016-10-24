@@ -2,11 +2,17 @@
 
 const ext = ['.ts'];
 
-const wrapper = {};
+const wrapper = {
+  tslint: {
+    emitErrors: true,
+    failOnHint: true,
+  },
+};
 
 const pre = {
   test: /\.ts$/,
   loader: 'tslint',
+  exclude: [/node_modules/],
 };
 
 const loader = {

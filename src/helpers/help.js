@@ -1,15 +1,34 @@
 'use strict';
 
 const webpack = require('webpack');
-const { filter, isEmpty, complement, cond, lt, gt, T, always } = require('ramda');
+const path = require('path');
+const {
+  filter,
+  isEmpty,
+  complement,
+  cond,
+  lt,
+  gt,
+  T,
+  always,
+  flip,
+  curry,
+  call,
+  map,
+  prop,
+} = require('ramda');
 
 const notEmpty = filter(complement(isEmpty));
+
+const flipCall = flip(curry(call));
 
 const sort = cond([
   [lt, always(1)],
   [gt, always(-1)],
   [T, always(0)],
 ]);
+
+const mapProp = x => map(prop(x));
 
 const hasLoader = seek => loader =>
   loader.loaders ? loader.loaders.includes(seek) : loader.loader === seek;
@@ -26,6 +45,7 @@ const baseProvider = () => ({
   },
   plugins: [],
   devServer: {},
+  debug: true,
 });
 
 const devServerProvider = publicPath => ({
@@ -41,26 +61,13 @@ const devServerProvider = publicPath => ({
 
 const watchProvider = () => ({ aggregateTimeout: 300, poll: true });
 
-const run = provider => webpack(provider, err => console.log(`===> Error : ${!err ? '/' : err}`));
-
-const watch = provider => webpack(provider).watch(watchProvider(), err => console.log(`===> Error : ${!err ? '/' : err}`));
-
-const listen = baseProvider => (host, port) =>
-  new Promise((resolve, reject) =>
-    (new WebpackDevServer(webpack(baseProvider), devServerProvider(`http://${host}:${port}`)))
-      .listen(port, host, error =>
-        error ? reject(`===> Server can't start : ${error}`) : resolve(`===> Server started on http://${host}:${port}`)
-      )
-  );
-
 module.exports = {
   notEmpty,
+  flipCall,
   sort,
+  mapProp,
   hasLoader,
   baseProvider,
   devServerProvider,
   watchProvider,
-  run,
-  watch,
-  listen,
 };

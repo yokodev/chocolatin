@@ -2,10 +2,7 @@
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-const wrapper = (dir, root = './') => provider =>
-  new CleanWebpackPlugin([...dir], {
-    root,
-    verbose: true,
-  });
+const wrapper = paths => provider =>
+  new CleanWebpackPlugin([...paths], { root: process.cwd(), verbose: true });
 
 module.exports = wrapper;

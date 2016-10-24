@@ -1,22 +1,15 @@
 'use strict';
 
-const { notEmpty } = require('./help');
+const { notEmpty, mapProp, flipCall } = require('./help');
 const { LoaderOptionsPlugin } = require('webpack');
-
 const {
   pipe,
   reduce,
-  map,
-  prop,
   flatten,
   uniq,
-  flip,
-  call,
   mergeAll,
-  curry,
+  map,
 } = require('ramda');
-
-const mapProp = x => map(prop(x));
 
 const ext = pipe(
   mapProp('ext'),
@@ -64,13 +57,15 @@ const applyLoaders = loaders => provider =>
 
 const applyMixins = mixins => provider => mergeAll([provider, ...mixins]);
 
+const parsePlugins = provider => pipe(map(flipCall(provider)), flatten, notEmpty);
+
 const applyPlugins = (options, plugins) => provider =>
   mergeAll([provider, {
     plugins: [
-      ...notEmpty(flatten(plugins.map(flip(curry(call))(provider)))),
+      ...parsePlugins(provider)(plugins),
       new LoaderOptionsPlugin({
         minimize: true,
-        options: Object.assign({ context: __dirname }, options),
+        options: Object.assign({ context: process.cwd() }, options),
       }),
     ],
   }]);
