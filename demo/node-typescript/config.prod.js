@@ -7,6 +7,8 @@ const {
   plugins: { Clean, Define, ProgressBar, Minify },
 } = require('chocolatin');
 
+const { PROD } = require('./metadata');
+
 // Mixins, Loaders and Plugins
 module.exports = burn(
   [
@@ -19,7 +21,7 @@ module.exports = burn(
   ],
   [
     Clean(['dist']),
-    Define('production'),
+    Define('production', PROD),
     ProgressBar(),
     Minify(),
   ]

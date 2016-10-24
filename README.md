@@ -33,7 +33,7 @@ They are functions who need to be call and return object.
 Loader need to be manually install in your project, via npm.
 
 - Babel : babel-loader
-- EsLint (can be combine with Babel) : eslint-loader
+- EsLint : eslint-loader, eslint, eslint-config-airbnb, eslint-plugin-import, eslint-plugin-jsx-a11y, eslint-plugin-react
 - TypeScript : typescript, awesome-typescript-loader, tslint, tslint-loader
 - CSS : css-loader, postcss-loader, autoprefixer, css-mqpacker
 - SASS : sass-loader, node-sass, postcss-loader, autoprefixer
