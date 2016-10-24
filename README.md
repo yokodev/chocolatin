@@ -26,9 +26,9 @@ We will write real documentation/contribution guide later.
 
 # Available loaders and package needed
 
-Loader never take options, but in further we will make configurable loader with extra options.
+Loader can take options.
 
-They are plain object.
+They are functions who need to be call and return object.
 
 Loader need to be manually install in your project, via npm.
 

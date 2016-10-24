@@ -15,7 +15,7 @@ module.exports = burn(
     Target('node'),
   ],
   [
-    TypeScript,
+    TypeScript(),
   ],
   [
     Clean(['dist']),
