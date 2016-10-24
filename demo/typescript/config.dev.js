@@ -5,7 +5,7 @@ const {
   mixins: { Input, Output, Target, Watch },
   loaders: { TypeScript },
   plugins: { Define, NoError },
-} = require('chocolatine');
+} = require('chocolatin');
 
 // Mixins, Loaders and Plugins
 module.exports = burn(

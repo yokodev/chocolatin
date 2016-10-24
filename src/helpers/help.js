@@ -16,6 +16,7 @@ const {
   call,
   map,
   prop,
+  pipe,
 } = require('ramda');
 
 const notEmpty = filter(complement(isEmpty));

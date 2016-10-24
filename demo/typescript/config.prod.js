@@ -5,7 +5,7 @@ const {
   mixins: { Input, Output, Target },
   loaders: { TypeScript },
   plugins: { Clean, Define, ProgressBar, Minify },
-} = require('chocolatine');
+} = require('chocolatin');
 
 // Mixins, Loaders and Plugins
 module.exports = burn(
