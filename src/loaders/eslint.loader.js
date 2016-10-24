@@ -1,13 +1,10 @@
 'use strict';
 
-const formatter = require('eslint-friendly-formatter');
-
 const ext = ['.js', '.jsx'];
 
 const wrapper = {
   eslint: {
     configFile: '.eslintrc',
-    formatter,
   },
 };
 
