@@ -1,7 +1,7 @@
 'use strict';
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const { hasLoader } = require('../../helpers');
+const { hasLoader } = require('../helpers/help');
 
 const wrapper = filename => provider => {
   provider

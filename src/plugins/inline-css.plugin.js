@@ -1,6 +1,6 @@
 'use strict';
 
-const { hasLoader } = require('../../helpers/help');
+const { hasLoader } = require('../helpers/help');
 
 const wrapper = () => provider => {
   provider

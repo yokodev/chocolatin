@@ -1,7 +1,7 @@
 'use strict';
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { sort } = require('../../helpers');
+const { sort } = require('../helpers/help');
 
 const wrapper = template => provider =>
   new HtmlWebpackPlugin({
