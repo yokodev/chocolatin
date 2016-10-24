@@ -1,3 +1,3 @@
-const test = 'METADATA : ' + METADATA.API_URL
+var test = 'METADATA : ' + METADATA.API_URL
 
 console.log(test)
