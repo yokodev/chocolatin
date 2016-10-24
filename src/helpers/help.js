@@ -28,7 +28,7 @@ const sort = cond([
   [T, always(0)],
 ]);
 
-const mapProp = x => map(prop(x));
+const mapProp = pipe(map, prop);
 
 const hasLoader = seek => loader =>
   loader.loaders ? loader.loaders.includes(seek) : loader.loader === seek;
@@ -45,7 +45,6 @@ const baseProvider = () => ({
   },
   plugins: [],
   devServer: {},
-  debug: true,
 });
 
 const devServerProvider = publicPath => ({
