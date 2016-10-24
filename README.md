@@ -30,13 +30,16 @@ Loader never take options, but in further we will make configurable loader with 
 
 They are plain object.
 
+Loader need to be manually install in your project, via npm.
+
 - Babel : babel-loader
 - EsLint (can be combine with Babel) : eslint-loader
 - TypeScript : typescript, awesome-typescript-loader, tslint, tslint-loader
 - CSS : css-loader, postcss-loader, autoprefixer, css-mqpacker
 - SASS : sass-loader, node-sass, postcss-loader, autoprefixer
 - Stylus : stylus-loader, stylus, postcss-loader, autoprefixer
-- Assets : /
+- Assets : url-loader.
+- JSON : file-loader.
 
 # Available mixins
 
