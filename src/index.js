@@ -1,3 +1,5 @@
+'use strict';
+
 const { uncurryN } = require('ramda');
 const { baseProvider } = require('./helpers/help');
 const provide = require('./helpers/provider');
