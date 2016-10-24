@@ -1,6 +1,6 @@
 {
-  "name": "chocolatine",
-  "version": "0.0.2",
+  "name": "chocolatin",
+  "version": "0.0.3",
   "description": "Make life in your project",
   "scripts": {
     "test": "npm run jest -- --verbose",
@@ -11,14 +11,15 @@
   },
   "author": "Meillet Robin <robin.meillet@epitech.eu>",
   "main": "src/index.js",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kMeillet/chocolatine.git"
+    "url": "git+https://github.com/kMeillet/chocolatin.git"
   },
   "bugs": {
-    "url": "https://github.com/kMeillet/chocolatine/issues"
+    "url": "https://github.com/kMeillet/chocolatin/issues"
   },
-  "homepage": "https://github.com/kMeillet/chocolatine/#readme",
+  "homepage": "https://github.com/kMeillet/chocolatin/#readme",
   "jest": {
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.js$",
     "moduleFileExtensions": [
@@ -26,13 +27,18 @@
     ]
   },
   "devDependencies": {
-    "clean-webpack-plugin": "^0.1.13",
     "jest": "^16.0.2",
-    "progress-bar-webpack-plugin": "^1.9.0",
     "yarn": "^0.16.1"
   },
   "dependencies": {
     "ramda": "^0.22.1",
+    "assets-webpack-plugin": "^3.5.0",
+    "clean-webpack-plugin": "^0.1.13",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-webpack-plugin": "^2.24.0",
+    "progress-bar-webpack-plugin": "^1.9.0",
+    "webpack-browser-plugin": "^1.0.12",
+    "webpack-dashboard": "^0.2.0",
     "webpack": "^2.1.0-beta.25"
   },
   "engines": {

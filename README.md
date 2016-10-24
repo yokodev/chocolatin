@@ -1,65 +1,73 @@
-# Chocolatine
+# Chocolatin
 
-WebPack, Gulp, Grunt, are tools to build JavaScript project and add super-power.
+WebPack is awesome : build JavaScript project, add super-power, import anything, anywhere.
 
-But folks need to install a lot of package and messy configuration with object is a real problem.
+But folks need to install a lot of package and messy configuration with object merging is a real problem for beginner.
 
-Now, Chocolatine is her :
+Chocolatin help user to leverage friction with WebPack configuration.
 
-- Abstraction for WebPack 2 without package-hell.
-- Easy to configure, no crappy object.
-- Easy to integrate with npm scripts and CI system.
-- Expendable.
+It's just a wrapper around WebPack 2.
 
-# How to install ?
+# How to install
 
 You need Node.js >= 6 and NPM >= 3.
 
-- Install Chocolatine in your project :
-
 ```sh
-npm i chocolatine --save-dev
+npm i chocolatin webpack@2.1.0-beta.25 --save-dev
 ```
 
-Now, you can use it.
+# API
 
-# Build : make your project for production
+You can ship the "demo" directory for some example with Babel, TypeScript, Node.js, Angular 2, React, ...
 
-- Make a new file (config.js) in your project.
+The API is really basic : import chocolatin and burn mixins, loaders, plugins.
 
-```js
-// config.js
-const chocolatine = require('chocolatine');
+We will write real documentation/contribution guide later.
 
-chocolatine.burn(
-  
-);
-```
+# Available loaders and package needed
 
-Now, simply run :
+Loader never take options, but in further we will make configurable loader with extra options.
 
-```sh
-node config.js
-```
+They are plain object.
 
-Chocolatine ship source and apply loaders, plugins and mixins.
+- Babel : babel-loader
+- EsLint (can be combine with Babel) : eslint-loader
+- TypeScript : typescript, awesome-typescript-loader, tslint, tslint-loader
+- CSS : css-loader, postcss-loader, autoprefixer, css-mqpacker
+- SASS : sass-loader, node-sass, postcss-loader, autoprefixer
+- Stylus : stylus-loader, stylus, postcss-loader, autoprefixer
+- Assets : /
 
-Then, "dist" folder is created with production build.
+# Available mixins
 
-# Watch : refresh file when saved
+Mixin can take options.
 
-```sh
-node config.js -w
-```
+They are functions who need to be call and return object.
 
-# Server : make a web-server
+- Input : input options (like WebPack entries).
+- Ouput : output options (like WebPack output).
+- Target : target specific environment (node per example).
+- External : add external module who don't need to be part of your build (like Socket.io).
+- Watch : add watch mode.
 
-```sh
-node config.js -p 3000
-```
+# Available plugins
 
-# HMR : make a web-server with Hot Module Replacement
+Plugin can take options.
 
-```sh
-node config.js -hmr 3000
-```
+They are functions who need to be call and return a WebPack plugin or nothing.
+
+- AssetsGenerator : generate assets.json file.
+- Browser : start browser after build.
+- Chunk : split code into multiple fragments for lazy-loading.
+- Clean : clean directories before build.
+- Dashboard : enabled dashboard.
+- Define : define metadata (replaced at compile time).
+- DevTool : set if needed for sourcemaps.
+- ExtractCSS : extract style into single file.
+- HMR : enabled HMR.
+- HTML : add style/script into index.html file
+- InlineCSS : inline style in document when imported.
+- Minify : minify code.
+- NoError : disabled error.
+- ProgressBar : add progress bar when build.
+- Provide : add global module.
