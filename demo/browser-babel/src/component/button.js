@@ -3,5 +3,5 @@ export default (props) => {
 
   element.innerHTML = props.name;
 
-  return element
+  return element;
 };
