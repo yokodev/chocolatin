@@ -1,0 +1,9 @@
+body {
+  background-color: #ff706d;
+}
+
+button {
+  border: 5px solid #fff;
+  color: #000;
+  background-color: transparent;
+}
