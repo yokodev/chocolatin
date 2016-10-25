@@ -11,7 +11,7 @@
   "devDependencies": {
     "autoprefixer": "^6.5.1",
     "awesome-typescript-loader": "^2.2.4",
-    "chocolatin": "^0.7.5",
+    "chocolatin": "^0.8.0",
     "css-loader": "^0.25.0",
     "css-mqpacker": "^5.0.1",
     "csscomb-loader": "0.0.2",
