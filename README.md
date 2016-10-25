@@ -40,8 +40,8 @@ They are functions who need to be call and return object.
 
 Loader need to be manually install in your project, via npm or yarn.
 
-- Babel : babel-loader, babel-core.
-- EsLint : eslint-loader, eslint.
+- Babel : babel-loader, babel-core, babel-plugin-transform-runtime, and presets (like babel-preset-es2015 + babel-preset-stage-2).
+- EsLint : eslint-loader, eslint and presets if needed (AirBnB or standard).
 - TypeScript : typescript, awesome-typescript-loader, tslint, tslint-loader
 - Css : css-loader, postcss-loader.
 - Sass : sass-loader, node-sass, postcss-loader.
@@ -77,7 +77,7 @@ They are functions who need to be call and return a WebPack plugin or nothing.
 - DevTool : set it for browser source-maps.
 - ExtractCss : extract style into single file (use it in production).
 - Hmr : enabled HMR when you use WebPack web-server.
-- HtmlGenerator : generate HTML file or add style/script into your index.html
+- HtmlGenerator : add style/script into your index.html
 - InlineCss : inline style in document when imported (use it in development).
 - Minify : minify output.
 - NoError : disabled error.

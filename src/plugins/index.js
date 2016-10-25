@@ -12,7 +12,7 @@ const Dashboard = require('./dashboard.plugin.js');
 const DevTool = require('./dev-tool.plugin.js');
 const ExtractCss = require('./extract-css.plugin.js');
 const Hmr = require('./hmr.plugin.js');
-const Html = require('./html.plugin.js');
+const HtmlGenerator = require('./html.plugin.js');
 const InlineCss = require('./inline-css.plugin.js');
 const Provide = require('./provide.plugin.js');
 
@@ -29,7 +29,7 @@ module.exports = {
   DevTool,
   ExtractCss,
   Hmr,
-  Html,
+  HtmlGenerator,
   InlineCss,
   Provide,
 };
