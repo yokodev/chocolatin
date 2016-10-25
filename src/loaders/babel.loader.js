@@ -13,6 +13,7 @@ const pre = {};
 const loader = {
   test: /\.(js|jsx)$/,
   loader: 'babel',
+  exclude: /node_modules/,
 };
 
 const post = {};

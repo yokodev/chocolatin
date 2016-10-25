@@ -13,7 +13,7 @@ const wrapper = {
 const pre = {
   test: /\.ts$/,
   loader: 'tslint',
-  exclude: [/node_modules/],
+  exclude: /node_modules/,
 };
 
 const loader = {
