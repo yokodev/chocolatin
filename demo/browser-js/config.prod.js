@@ -4,7 +4,7 @@ const {
   burn,
   mixins: { Input, Output },
   loaders: { EsLint },
-  plugins: { Clean, Define, ProgressBar, Minify, Assets, Chunk, DevTool, ExtractCss, HtmlGenerator },
+  plugins: { Clean, Define, ProgressBar, Minify, AssetsGenerator, HtmlGenerator, Chunk, DevTool, ExtractCss },
 } = require('chocolatin');
 
 const { PROD } = require('./metadata');
@@ -24,12 +24,12 @@ module.exports = burn(
   [
     Clean(['dist']),
     Define('production', PROD),
-    Assets('./dist/'),
+    AssetsGenerator('./dist/'),
+    HtmlGenerator('./src/index.html'),
     DevTool(false),
     ProgressBar(),
     Minify(),
     Chunk(),
     ExtractCss(),
-    HtmlGenerator(),
   ]
 );

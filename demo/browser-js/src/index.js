@@ -4,4 +4,4 @@ function render(element) {
   element.append(buttonComponent('My btn !'));
 }
 
-render(document.body);
+render(document.getElementById('app'));
