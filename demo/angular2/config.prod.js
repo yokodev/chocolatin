@@ -3,7 +3,7 @@
 const {
   burn,
   mixins: { Input, Output, Target },
-  loaders: { Assets, TypeScript, Css, Sass },
+  loaders: { Assets, TypeScript, Css, Sass, Html },
   plugins: { Clean, Define, ProgressBar, Minify, AssetsGenerator, HtmlGenerator, Chunk, DevTool, ExtractCss },
 } = require('chocolatin');
 
@@ -18,7 +18,7 @@ const postcss = [
 module.exports = burn(
   [
     Input({
-      _polyfills: ['./src/polyfills.ts'],
+      polyfills: ['./src/polyfills.ts'],
       vendor: ['./src/vendor.ts'],
       app: ['./src/main.browser.ts', './src/critical.scss'],
     }),
@@ -30,6 +30,7 @@ module.exports = burn(
     TypeScript(),
     Css(postcss),
     Sass(postcss),
+    Html(),
   ],
   [
     Clean(['dist']),
@@ -39,7 +40,7 @@ module.exports = burn(
     DevTool(false),
     ProgressBar(),
     Minify(),
-    Chunk(),
+    Chunk({ name: ['polyfills', 'vendor'].reverse() }),
     ExtractCss(),
   ]
 );
