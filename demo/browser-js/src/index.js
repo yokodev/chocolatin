@@ -1,4 +1,4 @@
-const buttonComponent = require('./component/button')
+import buttonComponent from './component/button'
 
 function render (element) {
   element.appendChild(buttonComponent({ name: 'My btn !' }))
