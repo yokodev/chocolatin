@@ -4,7 +4,19 @@ const {
   burn,
   mixins: { Input, Output, Target },
   loaders: { Assets, TypeScript, Css, Sass, Html },
-  plugins: { Clean, Define, ProgressBar, Minify, AssetsGenerator, HtmlGenerator, Chunk, DevTool, ExtractCss, Md5Hash },
+  plugins: {
+    Clean,
+    Define,
+    ProgressBar,
+    Minify,
+    AssetsGenerator,
+    HtmlGenerator,
+    Chunk,
+    DevTool,
+    ExtractCss,
+    Md5Hash,
+    Ng2ContextFix,
+  },
 } = require('chocolatin');
 
 const { PROD } = require('./metadata');
@@ -43,5 +55,6 @@ module.exports = burn(
     Chunk({ name: ['polyfills', 'vendor'].reverse() }),
     ExtractCss(),
     Md5Hash(),
+    Ng2ContextFix(),
   ]
 );
