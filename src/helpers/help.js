@@ -49,7 +49,6 @@ const baseProvider = () => ({
 
 const devServerProvider = (host, port) => ({
   headers: { 'Access-Control-Allow-Origin': '*' },
-  hot: true,
   historyApiFallback: true,
   compress: true,
   quiet: false,
