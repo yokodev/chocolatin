@@ -3,7 +3,7 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const { hasLoader } = require('../helpers/help');
 
-const wrapper = filename => provider => {
+const wrapper = (filename = '[name].[contenthash:8].css') => provider => {
   provider
     .module
     .loaders
