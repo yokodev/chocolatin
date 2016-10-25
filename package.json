@@ -1,6 +1,6 @@
 {
   "name": "chocolatin",
-  "version": "0.7.5",
+  "version": "0.7.6",
   "description": "Make life in your project",
   "scripts": {
     "test": "npm run jest -- --verbose",

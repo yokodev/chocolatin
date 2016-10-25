@@ -1,1 +1,12 @@
-{"app":{"js":"/app.js"},"polyfills":{"js":"/polyfills.js"},"vendor":{"js":"/vendor.06776d50.js"}}
+{
+  "app": {
+    "js": "/app.js",
+    "css": "/app.a3a54acb.css"
+  },
+  "vendor": {
+    "js": "/vendor.js"
+  },
+  "polyfills": {
+    "js": "/polyfills.js"
+  }
+}
