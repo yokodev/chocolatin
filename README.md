@@ -61,6 +61,7 @@ They are functions who need to be call and return object.
 - Target : target specific environment (node per example).
 - External : add external module who don't need to be part of your build (like Socket.io).
 - Watch : add watch mode.
+- Server : add web server.
 
 # Available plugins
 
