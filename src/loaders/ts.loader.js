@@ -11,13 +11,13 @@ const wrapper = {
 };
 
 const pre = {
-  test: /\.ts$/,
+  test: /\.(ts|tsx)$/,
   loader: 'tslint',
   exclude: /node_modules/,
 };
 
 const loader = {
-  test: /\.ts$/,
+  test: /\.(ts|tsx)$/,
   loader: 'awesome-typescript-loader',
 };
 
