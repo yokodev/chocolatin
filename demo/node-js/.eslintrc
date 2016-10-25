@@ -5,7 +5,8 @@
     "ecmascript": 5
   },
   "env": {
-    "browser": false
+    "browser": false,
+    "node": true
   },
   "rules": {
     "indent": 2,

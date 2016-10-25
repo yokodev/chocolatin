@@ -1,9 +1,10 @@
 {
   "scripts": {
-    "start": "webpack-dev-server --config ./config.dev.js --inline=false",
+    "start": "webpack-dashboard -- webpack-dev-server --config ./config.dev.js --inline=false",
     "build": "webpack --config ./config.prod.js",
     "webpack": "webpack",
-    "webpack-dev-server": "webpack-dev-server"
+    "webpack-dev-server": "webpack-dev-server",
+    "webpack-dashboard": "webpack-dashboard"
   },
   "author": "Meillet Robin <robin.meillet@epitech.eu>",
   "license": "MIT",
@@ -22,6 +23,7 @@
     "typescript": "^2.0.3",
     "url-loader": "^0.5.7",
     "webpack": "^2.1.0-beta.25",
+    "webpack-dashboard": "^0.2.0",
     "webpack-dev-server": "^2.1.0-beta.5"
   }
 }

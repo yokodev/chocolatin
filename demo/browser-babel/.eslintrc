@@ -26,7 +26,8 @@
     "unicodeCodePointEscapes": false
   },
   "env": {
-    "browser": true
+    "browser": true,
+    "node": false
   },
   "rules": {
     "indent": 2,
