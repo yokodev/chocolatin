@@ -12,7 +12,10 @@ const { PROD } = require('./metadata');
 // Mixins, Loaders and Plugins
 module.exports = burn(
   [
-    Input({ index: ['./src/index.js'] }),
+    Input({
+      vendor: ['./src/vendor.js'],
+      app: ['./src/index.js', './src/critical.css'],
+    ),
     Output('./dist/'),
     Target('node'),
   ],
