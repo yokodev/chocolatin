@@ -1,6 +1,6 @@
 {
   "name": "chocolatin",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "description": "Make life in your project",
   "scripts": {
     "test": "npm run jest -- --verbose",
@@ -42,6 +42,7 @@
     "typedoc-webpack-plugin": "^1.1.2",
     "webpack": "^2.1.0-beta.25",
     "webpack-browser-plugin": "^1.0.12",
+    "webpack-dashboard": "^0.2.0",
     "webpack-md5-hash": "0.0.5"
   },
   "engines": {

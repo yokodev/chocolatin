@@ -1,1 +1,9 @@
-{"app":{"js":"/app.js","css":"/app.53ffe19e.css"},"vendor":{"js":"/vendor.756476dd.js"}}
+{
+  "app": {
+    "js": "/app.js",
+    "css": "/app.b3554554.css"
+  },
+  "vendor": {
+    "js": "/vendor.e9515136.js"
+  }
+}
