@@ -2,9 +2,9 @@
 
 const {
   burn,
-  mixins: { Input, Output, Target },
+  mixins: { Input, Output },
   loaders: { EsLint },
-  plugins: { Clean, Define, ProgressBar, Minify, Assets, Chunk, DevTool, ExtractCss, Html },
+  plugins: { Clean, Define, ProgressBar, Minify, Assets, Chunk, DevTool, ExtractCss, HtmlGenerator },
 } = require('chocolatin');
 
 const { PROD } = require('./metadata');
@@ -15,9 +15,8 @@ module.exports = burn(
     Input({
       vendor: ['./src/vendor.js'],
       app: ['./src/index.js', './src/critical.css'],
-    ),
+    }),
     Output('./dist/'),
-    Target('node'),
   ],
   [
     EsLint(),
@@ -25,12 +24,12 @@ module.exports = burn(
   [
     Clean(['dist']),
     Define('production', PROD),
+    Assets('./dist/'),
+    DevTool(false),
     ProgressBar(),
     Minify(),
-    Assets('./dist/'),
     Chunk(),
-    DevTool(false),
     ExtractCss(),
-    Html(),
+    HtmlGenerator(),
   ]
 );
