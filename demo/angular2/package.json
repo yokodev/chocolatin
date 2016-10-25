@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "webpack-dashboard -- webpack-dev-server --config ./config.dev.js --inline=false",
+    "start": "webpack-dashboard -- webpack-dev-server --config ./config.dev.js",
     "build": "webpack --config ./config.prod.js",
     "webpack": "webpack",
     "webpack-dev-server": "webpack-dev-server",

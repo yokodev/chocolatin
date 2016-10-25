@@ -18,9 +18,9 @@ const postcss = [
 module.exports = burn(
   [
     Input({
-      polyfills: ['./src/polyfills.ts'],
-      vendor: ['./src/vendor.ts'],
-      app: ['./src/main.browser.ts', './src/critical.scss'],
+      polyfills: ['webpack-dev-server/client?http://0.0.0.0:3003', 'webpack/hot/only-dev-server', './src/polyfills.ts'],
+      vendor: ['webpack-dev-server/client?http://0.0.0.0:3003', 'webpack/hot/only-dev-server', './src/vendor.ts'],
+      app: ['webpack-dev-server/client?http://0.0.0.0:3003', 'webpack/hot/only-dev-server', './src/main.browser.ts', './src/critical.scss'],
     }),
     Output('/tmp/', '[name].js', 'http://localhost:3003/'),
     Server('localhost', 3003),
