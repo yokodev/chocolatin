@@ -41,7 +41,7 @@ const baseProvider = () => ({
   },
   externals: [],
   module: {
-    loaders: [],
+    rules: [],
   },
   plugins: [],
   devServer: {},

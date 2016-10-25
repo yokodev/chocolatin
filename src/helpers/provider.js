@@ -50,7 +50,7 @@ const applyLoaders = loaders => provider =>
     ext(loaders),
     {
       module: {
-        loaders: [...pre(loaders), ...loader(loaders), ...post(loaders)],
+        rules: [...pre(loaders), ...loader(loaders), ...post(loaders)],
       },
     },
   ]);

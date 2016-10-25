@@ -15,6 +15,9 @@ const Hmr = require('./hmr.plugin.js');
 const HtmlGenerator = require('./html.plugin.js');
 const InlineCss = require('./inline-css.plugin.js');
 const Provide = require('./provide.plugin.js');
+const Copy = require('./copy.plugin.js');
+const TypeDoc = require('./typedoc.plugin.js');
+const Md5Hash = require('./md5hash.plugin.js');
 
 module.exports = {
   Clean,
@@ -32,4 +35,7 @@ module.exports = {
   HtmlGenerator,
   InlineCss,
   Provide,
+  Copy,
+  TypeDoc,
+  Md5Hash,
 };

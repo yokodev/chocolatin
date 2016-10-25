@@ -1,14 +1,14 @@
 'use strict';
 
-const ext = ['.scss'];
+const ext = ['.stylus'];
 
 const wrapper = {};
 
 const pre = {};
 
 const loader = {
-  test: /\.scss$/,
-  loaders: ['css', 'csscomb', 'postcss', 'sass'],
+  test: /\.stylus$/,
+  loaders: ['css', 'csscomb', 'postcss', 'stylus'],
 };
 
 const post = {};

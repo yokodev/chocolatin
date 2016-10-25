@@ -1,11 +1,12 @@
 'use strict';
 
-const ext = ['.ts'];
+const ext = ['.js', '.ts'];
 
 const wrapper = {
   tslint: {
     emitErrors: true,
     failOnHint: true,
+    ressourcePath: './src',
   },
 };
 
@@ -16,9 +17,8 @@ const pre = {
 };
 
 const loader = {
-  test: /\.ts/,
+  test: /\.ts$/,
   loader: 'awesome-typescript-loader',
-  exclude: [/node_modules/],
 };
 
 const post = {};

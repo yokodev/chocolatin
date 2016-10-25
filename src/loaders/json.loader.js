@@ -9,7 +9,6 @@ const pre = {};
 const loader = {
   test: /\.json$/,
   loader: 'file',
-  exclude: [/node_modules/],
 };
 
 const post = {};
