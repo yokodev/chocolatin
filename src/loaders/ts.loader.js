@@ -1,6 +1,6 @@
 'use strict';
 
-const ext = ['.js', '.ts'];
+const ext = ['.js', '.ts', '.tsx'];
 
 const wrapper = {
   tslint: {

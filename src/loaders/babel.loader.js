@@ -1,6 +1,6 @@
 'use strict';
 
-const ext = ['.js', '.jsx'];
+const ext = ['.js', '.jsx', '.jsx'];
 
 const wrapper = {
   babel: {
