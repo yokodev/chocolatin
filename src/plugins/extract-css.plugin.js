@@ -6,7 +6,7 @@ const { hasLoader } = require('../helpers/help');
 const wrapper = (filename = '[name].[contenthash:8].css') => provider => {
   provider
     .module
-    .loaders
+    .rules
     .filter(hasLoader('css'))
     .forEach(loader => {
       let key;

@@ -13,8 +13,8 @@ const { DEV } = require('./metadata');
 module.exports = burn(
   [
     Input({
-      vendor: ['./src/vendor.ts'],
-      app: ['./src/index.ts', './src/critical.css'],
+      vendor: ['webpack-dev-server/client?http://0.0.0.0:3003', 'webpack/hot/only-dev-server', './src/vendor.ts'],
+      app: ['webpack-dev-server/client?http://0.0.0.0:3003', 'webpack/hot/only-dev-server', './src/index.ts', './src/critical.css'],
     }),
     Output('/tmp/', '[name].js', 'http://localhost:3003/'),
     Server('localhost', 3003),
