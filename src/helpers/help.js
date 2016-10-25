@@ -52,7 +52,7 @@ const devServerProvider = (host, port) => ({
   hot: true,
   historyApiFallback: true,
   compress: true,
-  quiet: true,
+  quiet: false,
   noInfo: false,
   inline: true,
   stats: { colors: true },
