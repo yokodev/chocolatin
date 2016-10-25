@@ -1,7 +1,7 @@
 import { Home } from '../app/components/home';
 
 export const COMPONENTS: Array<any> = [
-  Home
+  Home,
 ];
 
 export const DIRECTIVES: Array<any> = [

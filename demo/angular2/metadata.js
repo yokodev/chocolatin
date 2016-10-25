@@ -5,6 +5,6 @@ module.exports = {
   },
   PROD: {
     API_URL: 'http://www.google.fr',
-    BASE_URL: 'http://www.production.fr',
+    BASE_URL: '/',
   },
 };

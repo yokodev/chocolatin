@@ -15,7 +15,7 @@ const {
     DevTool,
     ExtractCss,
     Md5Hash,
-    Ng2ContextFix,
+    Ng2FixContext,
   },
 } = require('chocolatin');
 
@@ -30,7 +30,6 @@ const postcss = [
 module.exports = burn(
   [
     Input({
-      polyfills: ['./src/polyfills.ts'],
       vendor: ['./src/vendor.ts'],
       app: ['./src/main.browser.ts', './src/critical.scss'],
     }),
@@ -50,11 +49,11 @@ module.exports = burn(
     AssetsGenerator('./dist/'),
     HtmlGenerator('./src/index.html'),
     DevTool(false),
+    Ng2FixContext('./src'),
     ProgressBar(),
     Minify(),
-    Chunk({ name: ['polyfills', 'vendor'].reverse() }),
+    Chunk(),
     ExtractCss(),
     Md5Hash(),
-    Ng2ContextFix(),
   ]
 );
