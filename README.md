@@ -2,25 +2,33 @@
 
 WebPack is awesome : build JavaScript project, add super-power, import anything, anywhere.
 
-But folks need to install a lot of package and messy configuration with object merging is a real problem for beginner.
+But folks need to install a lot of package and messy configuration with object merging is a real problem for beginner who doesn't have time to learn WebPack.
 
-Chocolatin help user to leverage friction with WebPack configuration.
-
-It's just a wrapper around WebPack 2.
+Chocolatin help user to leverage friction with WebPack 2 (transition - configuration).
 
 # How to install
 
 You need Node.js >= 6 and NPM >= 3.
 
+Chocolatin need WebPack@2.1.0-beta.25 to work.
+
+We will follow WebPack 2 road-map and update package when new version release.
+
+With NPM :
+
 ```sh
 npm i chocolatin webpack@2.1.0-beta.25 --save-dev
 ```
 
-# API
+With Yarn :
+
+```sh
+yarn add chocolatin webpack@2.1.0-beta.25 --dev
+```
+
+# Demo
 
 You can ship the "demo" directory for some example with Babel, TypeScript, Node.js, Angular 2, React, ...
-
-The API is really basic : import chocolatin and burn mixins, loaders, plugins.
 
 We will write real documentation/contribution guide later.
 
@@ -32,14 +40,15 @@ They are functions who need to be call and return object.
 
 Loader need to be manually install in your project, via npm.
 
-- Babel : babel-loader
-- EsLint : eslint-loader, eslint, eslint-config-airbnb, eslint-plugin-import, eslint-plugin-jsx-a11y, eslint-plugin-react
+- Babel : babel-loader, babel-core.
+- EsLint : eslint-loader, eslint.
 - TypeScript : typescript, awesome-typescript-loader, tslint, tslint-loader
-- CSS : css-loader, postcss-loader, autoprefixer, css-mqpacker
-- SASS : sass-loader, node-sass, postcss-loader, autoprefixer
-- Stylus : stylus-loader, stylus, postcss-loader, autoprefixer
+- Css : css-loader, postcss-loader.
+- Sass : sass-loader, node-sass, postcss-loader.
+- Stylus : stylus-loader, stylus, postcss-loader.
 - Assets : url-loader.
-- JSON : file-loader.
+- Json : file-loader.
+- Html : file-loader.
 
 # Available mixins
 
@@ -65,12 +74,26 @@ They are functions who need to be call and return a WebPack plugin or nothing.
 - Clean : clean directories before build.
 - Dashboard : enabled dashboard.
 - Define : define metadata (replaced at compile time).
-- DevTool : set if needed for sourcemaps.
-- ExtractCSS : extract style into single file.
-- HMR : enabled HMR.
-- HTML : add style/script into index.html file
-- InlineCSS : inline style in document when imported.
-- Minify : minify code.
+- DevTool : set it for browser source-maps.
+- ExtractCss : extract style into single file (use it in production).
+- Hmr : enabled HMR when you use WebPack web-server.
+- HtmlGenerator : generate HTML file or add style/script into your index.html
+- InlineCss : inline style in document when imported (use it in development).
+- Minify : minify output.
 - NoError : disabled error.
-- ProgressBar : add progress bar when build.
-- Provide : add global module.
+- ProgressBar : add progress bar when build start.
+- Provide : add global module, module linking in global window (like jQuery 2.x).
+
+# Write your own loader/plugin/mixin
+
+Todo ...
+
+# API
+
+Todo ...
+
+# Road-map
+
+- Elm, Pure, CycleJS, Angular 2, React demos.
+- Deserve Chocolatin loader her, people doesn't need to install loader packages.
+- Real docs.

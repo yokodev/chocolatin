@@ -1,0 +1,23 @@
+{
+  "root": true,
+  "extends": "standard",
+  "settings": {
+    "ecmascript": 5
+  },
+  "env": {
+    "browser": false
+  },
+  "rules": {
+    "indent": 2,
+    "no-var": 2,
+    "new-cap": 0,
+    "no-console": 0,
+    "import/no-named-as-default": 0
+  },
+  "globals": {
+    "METADATA": true,
+    "ENV": true,
+    "NODE_ENV": true
+  },
+  "plugins": []
+}
