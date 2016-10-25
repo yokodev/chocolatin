@@ -54,7 +54,6 @@ const devServerProvider = (host, port) => ({
   compress: true,
   quiet: false,
   noInfo: false,
-  inline: true,
   stats: { colors: true },
   publicPath: `http://${host}:${port}`,
   host,
