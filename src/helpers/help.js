@@ -47,7 +47,7 @@ const baseProvider = () => ({
   devServer: {},
 });
 
-const devServerProvider = (host, port, publicPath) => ({
+const devServerProvider = (host, port) => ({
   headers: { 'Access-Control-Allow-Origin': '*' },
   hot: true,
   historyApiFallback: true,
@@ -56,7 +56,7 @@ const devServerProvider = (host, port, publicPath) => ({
   noInfo: false,
   inline: true,
   stats: { colors: true },
-  publicPath,
+  publicPath: `http://${host}:${port}`,
   host,
   port,
 });
