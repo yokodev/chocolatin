@@ -3,7 +3,7 @@
 const {
   burn,
   mixins: { Input, Output },
-  loaders: { EsLint },
+  loaders: { Assets, Css, EsLint },
   plugins: { Clean, Define, ProgressBar, Minify, AssetsGenerator, HtmlGenerator, Chunk, DevTool, ExtractCss },
 } = require('chocolatin');
 
@@ -19,6 +19,8 @@ module.exports = burn(
     Output('./dist/'),
   ],
   [
+    Assets(),
+    Css(),
     EsLint(),
   ],
   [

@@ -1,7 +1,7 @@
-module.exports = function(props) {
-  const element = document.createElement('button');
+module.exports = function (props) {
+  const element = document.createElement('button')
 
-  element.textContent = props.name;
+  element.textContent = props.name
 
-  return element;
-};
+  return element
+}
