@@ -38,7 +38,7 @@ Loader can take options.
 
 They are functions who need to be call and return object.
 
-Loader need to be manually install in your project, via npm.
+Loader need to be manually install in your project, via npm or yarn.
 
 - Babel : babel-loader, babel-core.
 - EsLint : eslint-loader, eslint.
