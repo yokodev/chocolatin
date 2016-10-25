@@ -2,7 +2,7 @@
 
 const {
   burn,
-  mixins: { Input, Output },
+  mixins: { Input, Output, Target },
   loaders: { Assets, TypeScript, Css },
   plugins: { Clean, Define, ProgressBar, Minify, AssetsGenerator, HtmlGenerator, Chunk, DevTool, ExtractCss },
 } = require('chocolatin');
@@ -17,6 +17,7 @@ module.exports = burn(
       app: ['./src/index.ts', './src/critical.css'],
     }),
     Output('./dist/'),
+    Target('web'),
   ],
   [
     Assets(),
