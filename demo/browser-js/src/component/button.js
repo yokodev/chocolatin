@@ -1,7 +1,7 @@
 module.exports = function (props) {
   const element = document.createElement('button')
 
-  element.textContent = props.name
+  element.innerHTML = props.name
 
   return element
 }
