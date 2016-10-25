@@ -5,6 +5,7 @@ const Output = require('./output.mixin.js');
 const Watch = require('./watch.mixin.js');
 const Target = require('./target.mixin.js');
 const External = require('./external.mixin.js');
+const Server = require('./server.mixin.js');
 
 module.exports = {
   Input,
@@ -12,4 +13,5 @@ module.exports = {
   Watch,
   Target,
   External,
+  Server,
 };

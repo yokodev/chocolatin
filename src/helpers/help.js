@@ -16,7 +16,6 @@ const {
   call,
   map,
   prop,
-  pipe,
 } = require('ramda');
 
 const notEmpty = filter(complement(isEmpty));
@@ -48,15 +47,18 @@ const baseProvider = () => ({
   devServer: {},
 });
 
-const devServerProvider = publicPath => ({
+const devServerProvider = (host, port, publicPath) => ({
   headers: { 'Access-Control-Allow-Origin': '*' },
   hot: true,
   historyApiFallback: true,
   compress: true,
   quiet: true,
   noInfo: false,
+  inline: true,
   stats: { colors: true },
   publicPath,
+  host,
+  port,
 });
 
 const watchProvider = () => ({ aggregateTimeout: 300, poll: true });
