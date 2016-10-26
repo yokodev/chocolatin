@@ -3,7 +3,7 @@
 const {
   burn,
   mixins: { Input, Output, Server, Target },
-  loaders: { Assets, TypeScript, Css },
+  loaders: { Assets, TypeScript, TsLint, Css },
   plugins: { Define, NoError, Browser, DevTool, HtmlGenerator, Hmr, Dashboard, InlineCss },
 } = require('chocolatin');
 
@@ -23,6 +23,7 @@ module.exports = burn(
   [
     Assets(),
     TypeScript(),
+    TsLint(),
     Css([
       require('autoprefixer')({ browsers: ['last 2 versions', 'ie > 8'] }),
       require('css-mqpacker')(),

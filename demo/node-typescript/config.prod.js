@@ -3,7 +3,7 @@
 const {
   burn,
   mixins: { Input, Output, Target },
-  loaders: { TypeScript },
+  loaders: { TypeScript, TsLint },
   plugins: { Clean, Define, ProgressBar, Minify },
 } = require('chocolatin');
 
@@ -18,6 +18,7 @@ module.exports = burn(
   ],
   [
     TypeScript(),
+    TsLint(),
   ],
   [
     Clean(['dist']),

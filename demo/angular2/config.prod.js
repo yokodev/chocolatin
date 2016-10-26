@@ -3,7 +3,7 @@
 const {
   burn,
   mixins: { Input, Output, Target },
-  loaders: { Assets, TypeScript, Css, Sass, Html },
+  loaders: { Assets, TypeScript, TsLint, Css, Sass, Html },
   plugins: {
     Clean,
     Define,
@@ -39,6 +39,7 @@ module.exports = burn(
   [
     Assets(),
     TypeScript(),
+    TsLint(),
     Css(postcss),
     Sass(postcss),
     Html(),

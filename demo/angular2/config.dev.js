@@ -3,7 +3,7 @@
 const {
   burn,
   mixins: { Input, Output, Server, Target },
-  loaders: { Assets, TypeScript, Css, Sass, Html },
+  loaders: { Assets, TypeScript, TsLint, Css, Sass, Html },
   plugins: { Define, NoError, Browser, DevTool, HtmlGenerator, Hmr, Dashboard, InlineCss, Ng2FixContext },
 } = require('chocolatin');
 
@@ -28,6 +28,7 @@ module.exports = burn(
   [
     Assets(),
     TypeScript(),
+    TsLint(),
     Css(postcss),
     Sass(postcss),
     Html(),

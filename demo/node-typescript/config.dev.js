@@ -3,7 +3,7 @@
 const {
   burn,
   mixins: { Input, Output, Target, Watch },
-  loaders: { TypeScript },
+  loaders: { TypeScript, TsLint },
   plugins: { Define, NoError },
 } = require('chocolatin');
 
@@ -19,6 +19,7 @@ module.exports = burn(
   ],
   [
     TypeScript(),
+    TsLint(),
   ],
   [
     Define('development', DEV),
