@@ -158,7 +158,7 @@ Plugin can take options.
 - Md5Hash : replace output filename with nice md5 hash.
 - Ng2FixContext : fix Angular 2 System.js context (needed if you use Angular 2).
 - TypeDoc : generate typescript documentation.
-- Extract : enable extraction for stylesheet.
+- ExtractCss : enable extraction for stylesheet.
 
 # Road-map before v1
 
