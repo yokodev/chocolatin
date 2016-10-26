@@ -4,7 +4,7 @@ const {
   burn,
   mixins: { Input, Output, Server, Target },
   loaders: { Assets, Babel, Css, EsLint },
-  plugins: { Define, NoError, Browser, DevTool, HtmlGenerator, Hmr, Dashboard, InlineCss },
+  plugins: { Define, NoError, Browser, DevTool, HtmlGenerator, Hmr, Dashboard },
 } = require('chocolatin');
 
 const { DEV } = require('./metadata');
