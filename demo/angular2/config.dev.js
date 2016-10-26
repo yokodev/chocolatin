@@ -30,6 +30,7 @@ module.exports = burn(
     TypeScript(),
     TsLint(),
     Sass(postcss, /critical\.scss$/, ['style']),
+    Sass(postcss, /\.scss$/, ['raw']),
     Html(),
   ],
   [
