@@ -13,7 +13,6 @@ const DevTool = require('./dev-tool.plugin.js');
 const ExtractCss = require('./extract-css.plugin.js');
 const Hmr = require('./hmr.plugin.js');
 const HtmlGenerator = require('./html.plugin.js');
-const InlineCss = require('./inline-css.plugin.js');
 const Provide = require('./provide.plugin.js');
 const Copy = require('./copy.plugin.js');
 const TypeDoc = require('./typedoc.plugin.js');
@@ -34,7 +33,6 @@ module.exports = {
   ExtractCss,
   Hmr,
   HtmlGenerator,
-  InlineCss,
   Provide,
   Copy,
   TypeDoc,

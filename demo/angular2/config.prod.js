@@ -40,8 +40,8 @@ module.exports = burn(
     Assets(),
     TypeScript(),
     TsLint(),
-    Css(postcss),
-    Sass(postcss),
+    Sass(postcss, /critical\.css$/),
+    Sass(postcss, /\.scss$/, ['raw']),
     Html(),
   ],
   [

@@ -10,9 +10,7 @@ const Json = require('./json.loader.js');
 const Sass = require('./sass.loader.js');
 const Stylus = require('./stylus.loader.js');
 const Html = require('./html.loader.js');
-const StringCss = require('./stringcss.loader.js');
-const StringSass = require('./stringsass.loader.js');
-const StringStylus = require('./stringstylus.loader.js');
+const Pug = require('./pug.loader.js');
 
 module.exports = {
   TypeScript,
@@ -25,7 +23,5 @@ module.exports = {
   Sass,
   Stylus,
   Html,
-  StringCss,
-  StringSass,
-  StringStylus,
+  Pug,
 };

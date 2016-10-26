@@ -29,8 +29,7 @@ module.exports = burn(
     Assets(),
     TypeScript(),
     TsLint(),
-    Css(postcss),
-    Sass(postcss),
+    Sass(postcss, /critical\.scss$/, ['style']),
     Html(),
   ],
   [
@@ -41,7 +40,6 @@ module.exports = burn(
     Ng2FixContext('./src'),
     Hmr(),
     Dashboard(),
-    InlineCss(),
     NoError(),
   ]
 );

@@ -1,16 +1,15 @@
 'use strict';
 
-const ext = ['.html'];
+const ext = ['.pug', '.jade'];
 
 const wrapper = {};
 
-const pre = {};
-
 const loader = {
-  test: /\.html$/,
-  loaders: 'raw',
-  exclude: /index\.html$/,
+  test: /\.(pug|jade)$/,
+  loader: 'pug-html-loader',
 };
+
+const loader = {};
 
 const post = {};
 

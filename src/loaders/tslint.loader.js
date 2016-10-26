@@ -6,7 +6,6 @@ const wrapper = {
   tslint: {
     emitErrors: true,
     failOnHint: true,
-    ressourcePath: './src',
   },
 };
 

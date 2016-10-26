@@ -9,13 +9,7 @@ const wrapper = (filename = '[name].[contenthash:8].css') => provider => {
     .rules
     .filter(hasLoader('css'))
     .forEach(loader => {
-      let key;
-
-      if (loader.loaders) {
-        key = 'loaders';
-      } else {
-        key = 'loader';
-      }
+      const key = loader.loaders ? 'loaders' : 'loader';
 
       loader.loader = ExtractTextPlugin.extract(loader[key]);
 

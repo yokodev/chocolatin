@@ -20,10 +20,10 @@ const post = {};
    require('css-mqpacker')(),
  ]
  */
-module.exports = (postcss = []) => ({
+module.exports = (postcss = [], test = /\.scss$/, more = []) => ({
   ext,
   wrapper: Object.assign(wrapper, { postcss: [...postcss] }),
   pre,
-  loader,
+  loader: Object.assign(loader, { test, loaders: [...more, ...loader] }),
   post,
 });
