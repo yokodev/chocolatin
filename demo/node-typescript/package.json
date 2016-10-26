@@ -8,7 +8,7 @@
   "license": "MIT",
   "devDependencies": {
     "awesome-typescript-loader": "^2.2.4",
-    "chocolatin": "^0.8.2",
+    "chocolatin": "^0.8.3",
     "tslint": "^3.15.1",
     "tslint-loader": "^2.1.5",
     "typescript": "^2.0.3",
