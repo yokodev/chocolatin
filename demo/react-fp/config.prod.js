@@ -37,7 +37,7 @@ module.exports = burn(
     ProgressBar(),
     Minify(),
     Chunk(),
-    ExtractCss(),
+    ExtractCss(/\.css$/),
     Md5Hash(),
   ]
 );

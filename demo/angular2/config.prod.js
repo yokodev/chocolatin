@@ -3,7 +3,7 @@
 const {
   burn,
   mixins: { Input, Output, Target },
-  loaders: { Assets, TypeScript, TsLint, Css, Sass, Html },
+  loaders: { Assets, TypeScript, TsLint, Sass, Html },
   plugins: {
     Clean,
     Define,
@@ -13,7 +13,6 @@ const {
     HtmlGenerator,
     Chunk,
     DevTool,
-    ExtractCss,
     Md5Hash,
     Ng2FixContext,
   },
@@ -40,8 +39,7 @@ module.exports = burn(
     Assets(),
     TypeScript(),
     TsLint(),
-    Sass(postcss, /critical\.css$/),
-    Sass(postcss, /\.scss$/, ['raw']),
+    Sass(postcss, /\.scss$/, ['to-string']),
     Html(),
   ],
   [
@@ -54,7 +52,6 @@ module.exports = burn(
     ProgressBar(),
     Minify(),
     Chunk(),
-    ExtractCss(/critical\.css$/),
     Md5Hash(),
   ]
 );

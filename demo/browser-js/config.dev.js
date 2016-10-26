@@ -25,7 +25,7 @@ module.exports = burn(
     Css([
       require('autoprefixer')({ browsers: ['last 2 versions', 'ie > 8'] }),
       require('css-mqpacker')(),
-    ]),
+    ], /\.css$/, ['style']),
     EsLint(),
   ],
   [
@@ -35,7 +35,6 @@ module.exports = burn(
     DevTool(true),
     Hmr(),
     Dashboard(),
-    InlineCss(),
     NoError(),
   ]
 );

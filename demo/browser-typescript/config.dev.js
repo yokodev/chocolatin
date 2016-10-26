@@ -27,7 +27,7 @@ module.exports = burn(
     Css([
       require('autoprefixer')({ browsers: ['last 2 versions', 'ie > 8'] }),
       require('css-mqpacker')(),
-    ]),
+    ], /\.css$/, ['style']),
   ],
   [
     Browser('http://localhost', 3003),
