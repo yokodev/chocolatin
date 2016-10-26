@@ -24,6 +24,6 @@ module.exports = (postcss = [], test = /\.scss$/, more = []) => ({
   ext,
   wrapper: Object.assign(wrapper, { postcss: [...postcss] }),
   pre,
-  loader: Object.assign(loader, { test, loaders: [...more, ...loader] }),
+  loader: Object.assign(loader, { test, loaders: [...more, ...loader.loaders] }),
   post,
 });
