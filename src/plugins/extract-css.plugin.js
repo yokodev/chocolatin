@@ -3,11 +3,11 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const { hasLoader } = require('../helpers/help');
 
-const wrapper = (match, filename = '[name].[contenthash:8].css') => provider => {
+const wrapper = (filename = '[name].[contenthash:8].css') => provider => {
   provider
     .module
     .rules
-    .filter(hasLoader(match, 'css'))
+    .filter(hasLoader('css'))
     .forEach(loader => {
       const key = loader.loaders ? 'loaders' : 'loader';
 

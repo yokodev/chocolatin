@@ -30,8 +30,8 @@ const sort = cond([
 
 const mapProp = x => map(prop(x));
 
-const hasLoader = (match, seek) => loader =>
-  loader.loaders ? loader.loaders.includes(seek) && loader.test === match : loader.loader === seek && loader.test === match;
+const hasLoader = seek => loader =>
+  loader.loaders ? loader.loaders.includes(seek) : loader.loader === seek;
 
 const baseProvider = () => ({
   entry: {},

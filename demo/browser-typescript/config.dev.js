@@ -36,7 +36,6 @@ module.exports = burn(
     DevTool(true),
     Hmr(),
     Dashboard(),
-    InlineCss(),
     NoError(),
   ]
 );
