@@ -4,12 +4,12 @@ const ext = ['.pug', '.jade'];
 
 const wrapper = {};
 
+const pre = {};
+
 const loader = {
   test: /\.(pug|jade)$/,
   loader: 'pug-html-loader',
 };
-
-const loader = {};
 
 const post = {};
 
