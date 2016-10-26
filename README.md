@@ -10,20 +10,20 @@ Chocolatin help user to leverage friction with WebPack 2 (transition - configura
 
 You need Node.js >= 6 and NPM >= 3.
 
-Chocolatin need WebPack@2.1.0-beta.25 to work.
+Chocolatin need webpack@2.1.0-beta.25 & webpack-dev-server@2.1.0-beta.5.
 
 We will follow WebPack 2 road-map and update package when new version release.
 
 With NPM :
 
 ```sh
-npm i chocolatin webpack@2.1.0-beta.25 --save-dev
+npm i chocolatin webpack@2.1.0-beta.25 webpack-dev-server@2.1.0-beta.5 --save-dev
 ```
 
 With Yarn :
 
 ```sh
-yarn add chocolatin webpack@2.1.0-beta.25 --dev
+yarn add chocolatin webpack@2.1.0-beta.25 webpack-dev-server@2.1.0-beta.5 --dev
 ```
 
 # Demo
@@ -36,29 +36,33 @@ We will write real documentation/contribution guide later.
 
 Loader can take options.
 
-They are functions who need to be call and return object.
+They are functions who need to be call and return blueprint object.
 
 Loader need to be manually install in your project, via npm or yarn.
 
-- Babel : babel-loader, babel-core, babel-plugin-transform-runtime, and presets (like babel-preset-es2015 + babel-preset-stage-2).
-- EsLint : eslint-loader, eslint and presets if needed (AirBnB or standard).
-- TypeScript : typescript, awesome-typescript-loader, tslint, tslint-loader
-- Css : css-loader, postcss-loader.
-- Sass : sass-loader, node-sass, postcss-loader.
-- Stylus : stylus-loader, stylus, postcss-loader.
+- Babel : babel-loader, babel-core. Then, install presets if needed.
+- EsLint : eslint-loader, eslint. Then, install presets if needed.
+- TypeScript : typescript, awesome-typescript-loader.
+- Css : css-loader, csscomb-loader, postcss-loader.
+- Sass : sass-loader, node-sass & all of "Css" is required.
+- Stylus : stylus-loader, stylus & all of "Css" is required.
 - Assets : url-loader.
 - Json : file-loader.
-- Html : file-loader.
+- Html : raw-loader.
+- StringCss : raw-loader & all of "Css" is required.
+- StringSass : raw-loader & all of "Sass" is required.
+- StringStylus : raw-loader & all of "Stylus" is required.
+- TsLint : typescript, tslint, tslint-loader.
 
 # Available mixins
 
 Mixin can take options.
 
-They are functions who need to be call and return object.
+They are functions who need to be call and return object who will be merge with base WebPack configuration.
 
 - Input : input options (like WebPack entries).
 - Ouput : output options (like WebPack output).
-- Target : target specific environment (node per example).
+- Target : target specific environment (node or web per example).
 - External : add external module who don't need to be part of your build (like Socket.io).
 - Watch : add watch mode.
 - Server : add web server.
@@ -84,17 +88,12 @@ They are functions who need to be call and return a WebPack plugin or nothing.
 - NoError : disabled error.
 - ProgressBar : add progress bar when build start.
 - Provide : add global module, module linking in global window (like jQuery 2.x).
-
-# Write your own loader/plugin/mixin
-
-Todo ...
-
-# API
-
-Todo ...
+- Md5Hash : replace output filename with nice md5 hash.
+- Ng2ContextFix : fix Angular 2 System.js context (needed if you use Angular 2).
+- TypeDoc : generate typescript documentation.
 
 # Road-map
 
-- Elm, Pure, CycleJS, Angular 2, React demos.
+- Elm, Pure, CycleJS demos.
 - Deserve Chocolatin loader her, people doesn't need to install loader packages.
-- Real docs.
+- Real docs with options.
