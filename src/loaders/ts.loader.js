@@ -2,19 +2,9 @@
 
 const ext = ['.js', '.ts', '.tsx'];
 
-const wrapper = {
-  tslint: {
-    emitErrors: true,
-    failOnHint: true,
-    ressourcePath: './src',
-  },
-};
+const wrapper = {};
 
-const pre = {
-  test: /\.(ts|tsx)$/,
-  loader: 'tslint',
-  exclude: /node_modules/,
-};
+const pre = {};
 
 const loader = {
   test: /\.(ts|tsx)$/,
