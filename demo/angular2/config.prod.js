@@ -51,7 +51,7 @@ module.exports = burn(
     Ng2FixContext('./src'),
     ProgressBar(),
     Minify(),
-    Chunk(),
+    Chunk({ name: ['vendor']}),
     Md5Hash(),
   ]
 );

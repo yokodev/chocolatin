@@ -4,7 +4,7 @@ const {
   burn,
   mixins: { Input, Output, Server, Target },
   loaders: { Assets, TypeScript, TsLint, Sass, Html },
-  plugins: { Define, NoError, Browser, DevTool, HtmlGenerator, Hmr, Dashboard, Ng2FixContext },
+  plugins: { Define, NoError, Browser, DevTool, HtmlGenerator, Hmr, Dashboard, Ng2FixContext, Chunk },
 } = require('chocolatin');
 
 const { DEV } = require('./metadata');
@@ -38,6 +38,7 @@ module.exports = burn(
     HtmlGenerator('./src/index.html'),
     DevTool(true),
     Ng2FixContext('./src'),
+    Chunk({ name: ['vendor']}),
     Hmr(),
     Dashboard(),
     NoError(),
