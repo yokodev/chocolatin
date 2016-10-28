@@ -3,8 +3,8 @@
 const {
   burn,
   mixins: { Input, Output, Server, Target },
-  loaders: { Assets, TypeScript, TsLint, Sass, Html },
-  plugins: { Define, NoError, Browser, DevTool, HtmlGenerator, Hmr, Dashboard, Ng2FixContext, Chunk },
+  loaders: { Assets, Ng2TypeScript, TsLint, Sass, Html },
+  plugins: { Define, NoError, Browser, DevTool, HtmlGenerator, Hmr, Dashboard, Ng2FixContext, Chunk, ForkChecker },
 } = require('chocolatin');
 
 const { DEV } = require('./metadata');
@@ -27,7 +27,7 @@ module.exports = burn(
   ],
   [
     Assets(),
-    TypeScript(),
+    Ng2TypeScript(),
     TsLint(),
     Sass(postcss, /\.scss$/, ['to-string']),
     Html(),
@@ -42,5 +42,6 @@ module.exports = burn(
     Hmr(),
     Dashboard(),
     NoError(),
+    ForkChecker(),
   ]
 );

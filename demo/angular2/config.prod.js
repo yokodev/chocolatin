@@ -3,7 +3,7 @@
 const {
   burn,
   mixins: { Input, Output, Target },
-  loaders: { Assets, TypeScript, TsLint, Sass, Html },
+  loaders: { Assets, Ng2TypeScript, TsLint, Sass, Html },
   plugins: {
     Clean,
     Define,
@@ -15,6 +15,7 @@ const {
     DevTool,
     Md5Hash,
     Ng2FixContext,
+    ForkChecker,
   },
 } = require('chocolatin');
 
@@ -37,7 +38,7 @@ module.exports = burn(
   ],
   [
     Assets(),
-    TypeScript(),
+    Ng2TypeScript(),
     TsLint(),
     Sass(postcss, /\.scss$/, ['to-string']),
     Html(),
@@ -53,5 +54,6 @@ module.exports = burn(
     Minify(),
     Chunk({ name: ['vendor']}),
     Md5Hash(),
+    ForkChecker(),
   ]
 );

@@ -4,7 +4,7 @@ const {
   burn,
   mixins: { Input, Output, Server, Target },
   loaders: { Assets, TypeScript, TsLint, Css },
-  plugins: { Define, NoError, Browser, DevTool, HtmlGenerator, Hmr, Dashboard },
+  plugins: { Define, NoError, Browser, DevTool, HtmlGenerator, Hmr, Dashboard, ForkChecker },
 } = require('chocolatin');
 
 const { DEV } = require('./metadata');
@@ -37,5 +37,6 @@ module.exports = burn(
     Hmr(),
     Dashboard(),
     NoError(),
+    ForkChecker(),
   ]
 );

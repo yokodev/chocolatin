@@ -4,7 +4,7 @@ const {
   burn,
   mixins: { Input, Output, Target },
   loaders: { TypeScript, TsLint },
-  plugins: { Clean, Define, ProgressBar, Minify },
+  plugins: { Clean, Define, ProgressBar, Minify, ForkChecker },
 } = require('chocolatin');
 
 const { PROD } = require('./metadata');
@@ -25,5 +25,6 @@ module.exports = burn(
     Define('production', PROD),
     ProgressBar(),
     Minify(),
+    ForkChecker(),
   ]
 );

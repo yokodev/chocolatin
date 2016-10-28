@@ -10,7 +10,7 @@
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^6.5.1",
-    "chocolatin": "^0.9.4",
+    "chocolatin": "^0.9.5",
     "css-loader": "^0.25.0",
     "css-mqpacker": "^5.0.1",
     "csscomb-loader": "0.0.2",

@@ -4,7 +4,19 @@ const {
   burn,
   mixins: { Input, Output, Target },
   loaders: { Assets, TypeScript, TsLint, Css },
-  plugins: { Clean, Define, ProgressBar, Minify, AssetsGenerator, HtmlGenerator, Chunk, DevTool, ExtractCss, Md5Hash },
+  plugins: {
+    Clean,
+    Define,
+    ProgressBar,
+    Minify,
+    AssetsGenerator,
+    HtmlGenerator,
+    Chunk,
+    DevTool,
+    ExtractCss,
+    Md5Hash,
+    ForkChecker,
+  },
 } = require('chocolatin');
 
 const { PROD } = require('./metadata');
@@ -39,5 +51,6 @@ module.exports = burn(
     Chunk(),
     ExtractCss(),
     Md5Hash(),
+    ForkChecker(),
   ]
 );
