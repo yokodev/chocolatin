@@ -11,6 +11,7 @@ const Sass = require('./sass.loader.js');
 const Stylus = require('./stylus.loader.js');
 const Html = require('./html.loader.js');
 const Pug = require('./pug.loader.js');
+const Ng2TypeScript = require('./ng2ts.loader.js');
 
 module.exports = {
   TypeScript,
@@ -24,4 +25,5 @@ module.exports = {
   Stylus,
   Html,
   Pug,
+  Ng2TypeScript,
 };

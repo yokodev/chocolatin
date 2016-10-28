@@ -18,6 +18,7 @@ const Copy = require('./copy.plugin.js');
 const TypeDoc = require('./typedoc.plugin.js');
 const Md5Hash = require('./md5hash.plugin.js');
 const Ng2FixContext = require('./ng2.plugin.js');
+const ForkChecker = require('./forkchecker.plugin.js');
 
 module.exports = {
   Clean,
@@ -38,4 +39,5 @@ module.exports = {
   TypeDoc,
   Md5Hash,
   Ng2FixContext,
+  ForkChecker,
 };
