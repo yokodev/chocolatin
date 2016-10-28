@@ -114,6 +114,7 @@ At the moment, loader need to be manually install in your project, via npm or ya
 - Babel : babel-loader, babel-core. Then, install presets if needed and make .babelrc file.
 - EsLint : eslint-loader, eslint. Then, install presets if needed and make .eslintrc file.
 - TypeScript : typescript, awesome-typescript-loader. Then, make tsconfig.json file.
+- Ng2TypeScript : typescript, awesome-typescript-loader, angular2-template-loader. Then, make tsconfig.json file.
 - TsLint : typescript, tslint, tslint-loader. Then, make tslint.json file.
 - Css : css-loader, csscomb-loader, postcss-loader.
 - Sass : sass-loader, node-sass & all of "Css" is required.
@@ -159,6 +160,7 @@ Plugin can take options.
 - Ng2FixContext : fix Angular 2 System.js context (needed if you use Angular 2).
 - TypeDoc : generate typescript documentation.
 - ExtractCss : enable extraction for stylesheet.
+- ForkChecker : separate TypeScript type-check in another process.
 
 # Road-map before v1
 
