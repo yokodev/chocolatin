@@ -23,7 +23,7 @@ burn({
     Define('production', PROD),
     HtmlGenerator('./src/index.html'),
     DevTool(false),
-    Chunk({ name: 'vendor.[chunkhash:8].js' }),
+    Chunk({ name: 'vendor', filename: 'vendor.[chunkhash:8].js' }),
     AssetsGenerator(),
     ProgressBar(),
     Minify(),

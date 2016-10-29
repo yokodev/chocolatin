@@ -1,6 +1,6 @@
 {
   "name": "chocolatin",
-  "version": "0.9.8",
+  "version": "0.9.9",
   "description": "Make life in your project : build, start, dance.",
   "scripts": {
     "lint": "npm run xo -- ./src",

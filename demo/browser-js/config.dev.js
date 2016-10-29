@@ -22,11 +22,11 @@ server({
   ],
   loaders: [AssetsUrl, CssInline, Js],
   plugins: [
-    Browser('http://localhost', 3000),
     Define('development', DEV),
     HtmlGenerator('./src/index.html'),
-    Chunk({ name: 'vendor.[chunkhash:8].js' }),
+    Chunk({ name: 'vendor', filename: 'vendor.[chunkhash:8].js' }),
     DevTool(true),
+    Browser(),
     Hmr(),
     Dashboard(),
     NoError(),
