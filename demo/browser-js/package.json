@@ -8,6 +8,6 @@
   "license": "MIT",
   "devDependencies": {
     "webpack-dashboard": "^0.2.0",
-    "chocolatin": "^0.9.8"
+    "chocolatin": "^1.0.0",
   }
 }

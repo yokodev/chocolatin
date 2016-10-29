@@ -2,8 +2,8 @@
 
 const {
   burn,
-  mixins: { Input, Output, Target },
-  loaders: { Assets, TypeScript, TsLint, Css },
+  mixins: { Io },
+  loaders: { AssetsUrl, TypeScript, CssExtract },
   plugins: {
     Clean,
     Define,
@@ -13,7 +13,7 @@ const {
     HtmlGenerator,
     Chunk,
     DevTool,
-    ExtractCss,
+    Extract,
     Md5Hash,
     ForkChecker,
   },
@@ -21,36 +21,27 @@ const {
 
 const { PROD } = require('./metadata');
 
-// Mixins, Loaders and Plugins
-module.exports = burn(
-  [
-    Input({
-      vendor: ['./src/vendor.ts'],
-      app: ['./src/index.ts', './src/critical.css'],
-    }),
-    Output('./dist/'),
-    Target('web'),
+burn({
+  mixins: [
+    Io(
+      { vendor: ['./src/vendor.ts'], app: ['./src/index.ts', './src/critical.css'] },
+      { path: './dist', filename: '[name].js' },
+      'web'
+    ),
   ],
-  [
-    Assets(),
-    TypeScript(),
-    TsLint(),
-    Css([
-      require('autoprefixer')({ browsers: ['last 2 versions', 'ie > 8'] }),
-      require('css-mqpacker')(),
-    ]),
-  ],
-  [
+  loaders: [AssetsUrl, TypeScript, CssExtract],
+  plugins: [
     Clean(['dist']),
     Define('production', PROD),
-    AssetsGenerator('./dist/'),
     HtmlGenerator('./src/index.html'),
+    Chunk({ name: 'vendor', filename: 'vendor.[chunkhash:8].js' }),
     DevTool(false),
+    AssetsGenerator(),
     ProgressBar(),
     Minify(),
-    Chunk(),
-    ExtractCss(),
+    Extract(),
     Md5Hash(),
+    Extract(),
     ForkChecker(),
-  ]
-);
+  ],
+});

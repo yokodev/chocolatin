@@ -1,8 +1,7 @@
 require('./button.css');
 
-/* global window */
 function button(props) {
-  var element = window.document.createElement('button');
+  var element = document.createElement('button');
 
   element.innerHTML = props.name;
 

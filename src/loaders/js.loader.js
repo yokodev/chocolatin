@@ -6,6 +6,11 @@ const wrapper = {
   xo: {
     envs: ['node', 'browser'],
     space: true,
+    globals: {
+      METADATA: true,
+      ENV: true,
+      NODE_ENV: true,
+    },
     rules: {
       'object-curly-spacing': 0,
       'import/no-unresolved': 0,

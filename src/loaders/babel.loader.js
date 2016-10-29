@@ -10,6 +10,11 @@ const wrapper = {
     envs: ['node', 'browser'],
     esnext: true,
     space: true,
+    globals: {
+      METADATA: true,
+      ENV: true,
+      NODE_ENV: true,
+    },
     rules: {
       'object-curly-spacing': 0,
       'import/no-unresolved': 0,

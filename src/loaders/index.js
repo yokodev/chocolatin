@@ -11,6 +11,7 @@ const HtmlRaw = require('./html-raw.loader.js');
 const Js = require('./js.loader.js');
 const Json = require('./json.loader.js');
 const Jsx = require('./jsx.loader.js');
+const JsxFp = require('./jsx-fp.loader.js');
 const Pug = require('./pug.loader.js');
 const Sass = require('./sass.loader.js');
 const SassInline = require('./sass-inline.loader.js');
@@ -31,6 +32,7 @@ module.exports = {
   Js,
   Json,
   Jsx,
+  JsxFp,
   Pug,
   Sass,
   SassInline,
