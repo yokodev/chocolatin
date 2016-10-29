@@ -23,4 +23,4 @@ const apply = commitState(({ state, configuration: { plugins, loaders } }) =>
   })
 );
 
-module.exports = { chainCall, wrap, apply };
+module.exports = { chain, wrap, apply };
