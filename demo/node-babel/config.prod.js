@@ -2,28 +2,22 @@
 
 const {
   burn,
-  mixins: { Input, Output, Target },
-  loaders: { Babel, EsLint },
+  mixins: { Io },
+  loaders: { Babel },
   plugins: { Clean, Define, ProgressBar, Minify },
 } = require('chocolatin');
 
 const { PROD } = require('./metadata');
 
-// Mixins, Loaders and Plugins
-module.exports = burn(
-  [
-    Input({ index: ['./src/index.js'] }),
-    Output('./dist/'),
-    Target('node'),
+burn({
+  mixins: [
+    Io({ app: ['./src/index.js'] }, { path: './dist', filename: '[name].js' }, 'node'),
   ],
-  [
-    Babel(),
-    EsLint(),
-  ],
-  [
+  loaders: [Babel],
+  plugins: [
     Clean(['dist']),
     Define('production', PROD),
     ProgressBar(),
     Minify(),
-  ]
-);
+  ],
+});

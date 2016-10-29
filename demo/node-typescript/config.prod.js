@@ -2,29 +2,23 @@
 
 const {
   burn,
-  mixins: { Input, Output, Target },
-  loaders: { TypeScript, TsLint },
+  mixins: { Io },
+  loaders: { TypeScript },
   plugins: { Clean, Define, ProgressBar, Minify, ForkChecker },
 } = require('chocolatin');
 
 const { PROD } = require('./metadata');
 
-// Mixins, Loaders and Plugins
-module.exports = burn(
-  [
-    Input({ index: ['./src/index.ts'] }),
-    Output('./dist/'),
-    Target('node'),
+burn({
+  mixins: [
+    Io({ app: ['./src/index.ts'] }, { path: './dist', filename: '[name].js', }, 'node'),
   ],
-  [
-    TypeScript(),
-    TsLint(),
-  ],
-  [
+  loaders: [TypeScript],
+  plugins: [
     Clean(['dist']),
     Define('production', PROD),
     ProgressBar(),
     Minify(),
     ForkChecker(),
   ]
-);
+});

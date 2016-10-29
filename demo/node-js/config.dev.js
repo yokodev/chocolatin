@@ -13,9 +13,7 @@ watch({
   mixins: [
     Io({ app: ['./src/index.js'] }, { path: './dist', filename: '[name].js' }, 'node'),
   ],
-  loaders: [
-    Js,
-  ],
+  loaders: [Js],
   plugins: [
     Define('development', DEV),
     NoError(),

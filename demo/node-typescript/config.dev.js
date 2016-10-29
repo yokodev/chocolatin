@@ -1,29 +1,22 @@
 'use strict';
 
 const {
-  burn,
-  mixins: { Input, Output, Target, Watch },
-  loaders: { TypeScript, TsLint },
+  watch,
+  mixins: { Io },
+  loaders: { TypeScript },
   plugins: { Define, NoError, ForkChecker },
 } = require('chocolatin');
 
 const { DEV } = require('./metadata');
 
-// Mixins, Loaders and Plugins
-module.exports = burn(
-  [
-    Input({ index: ['./src/index.ts'] }),
-    Output('./dist/'),
-    Target('node'),
-    Watch(),
+watch({
+  mixins: [
+    Io({ app: ['./src/index.ts'] }, { path: './dist', filename: '[name].js', }, 'node'),
   ],
-  [
-    TypeScript(),
-    TsLint(),
-  ],
-  [
+  loaders: [TypeScript],
+  plugins: [
     Define('development', DEV),
     NoError(),
     ForkChecker(),
-  ]
-);
+  ],
+});

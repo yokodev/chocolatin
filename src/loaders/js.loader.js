@@ -2,7 +2,11 @@
 
 const ext = ['.js'];
 
-const wrapper = {};
+const wrapper = {
+  xo: {
+    space: true,
+  },
+};
 
 const pre = {
   test: /\.js$/,

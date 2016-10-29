@@ -1,28 +1,21 @@
 'use strict';
 
 const {
-  burn,
-  mixins: { Input, Output, Target, Watch },
-  loaders: { Babel, EsLint },
+  watch,
+  mixins: { Io },
+  loaders: { Babel },
   plugins: { Define, NoError },
 } = require('chocolatin');
 
 const { DEV } = require('./metadata');
 
-// Mixins, Loaders and Plugins
-module.exports = burn(
-  [
-    Input({ index: ['./src/index.js'] }),
-    Output('./dist/'),
-    Target('node'),
-    Watch(),
+watch({
+  mixins: [
+    Io({ app: ['./src/index.js'] }, { path: './dist', filename: '[name].js' }, 'node'),
   ],
-  [
-    Babel(),
-    EsLint(),
-  ],
-  [
+  loaders: [Babel],
+  plugins: [
     Define('development', DEV),
     NoError(),
-  ]
-);
+  ],
+});

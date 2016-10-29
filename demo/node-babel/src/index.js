@@ -1,3 +1,11 @@
-const test = `METADATA : ${METADATA.API_URL}`;
+const myPromise = new Promise(resolve => setTimeout(() => resolve('boop'), 1000));
 
-console.log(test);
+const bear = async() => {
+  console.log('Before');
+
+  const result = await myPromise;
+
+  console.log('After', result);
+};
+
+bear();

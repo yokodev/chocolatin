@@ -55,10 +55,10 @@ You can ship the "demo" directory for some example in different environment with
 
 # API
 
-### provide({ mixins: Array<Object>, loaders: Array<Object>, plugins: Array<Function> )): WebPack Object
+### provide({ mixins: Array\<Object>, loaders: Array\<Object>, plugins: Array\<Function> )): WebPack Configuration
 
-### burn({ mixins: Array<Object>, loaders: Array<Object>, plugins: Array<Function> )): void
+### burn({ mixins: Array\<Object>, loaders: Array\<Object>, plugins: Array\<Function> )): WebPack Compiler
 
-### watch({ mixins: Array<Object>, loaders: Array<Object>, plugins: Array<Function> )): WebPack Watcher
+### watch({ mixins: Array\<Object>, loaders: Array\<Object>, plugins: Array\<Function> )): WebPack Watcher
 
-### server({ mixins: Array<Object>, loaders: Array<Object>, plugins: Array<Function> )): WebPack Dev Server
+### server({ mixins: Array\<Object>, loaders: Array\<Object>, plugins: Array\<Function> )): WebPack Dev Server

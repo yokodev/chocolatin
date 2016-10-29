@@ -6,6 +6,9 @@ const wrapper = {
   babel: {
     babelrc: '.babelrc',
   },
+  xo: {
+    space: true,
+  },
 };
 
 const pre = {
