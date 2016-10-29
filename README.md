@@ -1,5 +1,7 @@
 # Chocolatin
 
+**Don't use it in production atm untill v1.0.0 release. We will do a lot of tweak to make API more flexible and reduce code size. It may break current project.**
+
 WebPack is awesome : build JavaScript project, add super-power, import anything, anywhere.
 
 But folks need to install a lot of package and messy configuration with object merging in different environment is a real problem for beginner who doesn't have time to learn WebPack.
