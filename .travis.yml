@@ -10,4 +10,3 @@ install:
 
 script:
   - npm run ci
-  - ./demo/node-js/test.sh
