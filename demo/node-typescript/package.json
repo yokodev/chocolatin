@@ -4,5 +4,8 @@
     "build": "node ./config.prod.js"
   },
   "author": "Meillet Robin <robin.meillet@epitech.eu>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "chocolatin": "^0.9.8"
+  }
 }

@@ -4,7 +4,13 @@ const ext = ['.js'];
 
 const wrapper = {
   xo: {
+    envs: ['node', 'browser'],
     space: true,
+    rules: {
+      'object-curly-spacing': 0,
+      'import/no-unresolved': 0,
+      'import/no-unassigned-import': 0,
+    },
   },
 };
 

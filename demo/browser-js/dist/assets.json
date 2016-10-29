@@ -1,9 +1,1 @@
-{
-  "app": {
-    "js": "/app.ef5201ae.js",
-    "css": "/app.cbe9e5e0.css"
-  },
-  "vendor": {
-    "js": "/vendor.5b88a318.js"
-  }
-}
+{"app":{"js":"app.js","css":"app.a9c9bfb8.css"},"vendor":{"js":"vendor.js"},"vendor.[chunkhash:8].js":{"js":"vendor.[chunkhash:8].js.js"}}

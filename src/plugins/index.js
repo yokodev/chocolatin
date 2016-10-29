@@ -8,6 +8,7 @@ const Copy = require('./copy.plugin.js');
 const Dashboard = require('./dashboard.plugin.js');
 const Define = require('./define.plugin.js');
 const DevTool = require('./dev-tool.plugin.js');
+const Extract = require('./extract.plugin.js');
 const ForkChecker = require('./forkchecker.plugin.js');
 const Hmr = require('./hmr.plugin.js');
 const HtmlGenerator = require('./html.plugin.js');
@@ -28,6 +29,7 @@ module.exports = {
   Dashboard,
   Define,
   DevTool,
+  Extract,
   ForkChecker,
   Hmr,
   HtmlGenerator,

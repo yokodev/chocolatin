@@ -36,6 +36,6 @@ const build = provider => webpack(provider).run(onError);
 
 const watcher = provider => webpack(provider).watch({ poll: true }, onError);
 
-const serve = provider => new WebpackDevServer(provider, {}).listen(3000);
+const serve = provider => new WebpackDevServer(webpack(provider), {}).listen(3000);
 
 module.exports = { eachLog, eachWarn, onError, build, watcher, serve };

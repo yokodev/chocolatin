@@ -7,7 +7,14 @@ const wrapper = {
     babelrc: '.babelrc',
   },
   xo: {
+    envs: ['node', 'browser'],
+    esnext: true,
     space: true,
+    rules: {
+      'object-curly-spacing': 0,
+      'import/no-unresolved': 0,
+      'import/no-unassigned-import': 0,
+    },
   },
 };
 

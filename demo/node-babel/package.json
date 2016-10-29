@@ -6,6 +6,6 @@
   "author": "Meillet Robin <robin.meillet@epitech.eu>",
   "license": "MIT",
   "devDependencies": {
-    "chocolatin": "^0.9.6"
+    "chocolatin": "^0.9.8"
   }
 }

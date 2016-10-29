@@ -4,6 +4,7 @@ const AssetsFile = require('./assets-file.loader.js');
 const AssetsUrl = require('./assets-url.loader.js');
 const Babel = require('./babel.loader.js');
 const Css = require('./css.loader.js');
+const CssExtract = require('./css-extract.loader.js');
 const CssInline = require('./css-inline.loader.js');
 const Html = require('./html.loader.js');
 const HtmlRaw = require('./html-raw.loader.js');
@@ -23,6 +24,7 @@ module.exports = {
   AssetsUrl,
   Babel,
   Css,
+  CssExtract,
   CssInline,
   Html,
   HtmlRaw,

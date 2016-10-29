@@ -1,40 +1,34 @@
 'use strict';
 
 const {
-  burn,
-  mixins: { Input, Output, Server, Target },
-  loaders: { Assets, Css, EsLint },
-  plugins: { Define, NoError, Browser, DevTool, HtmlGenerator, Hmr, Dashboard },
+  server,
+  mixins: { Io },
+  loaders: { AssetsUrl, CssInline, Js },
+  plugins: { Define, NoError, Browser, DevTool, HtmlGenerator, Hmr, Dashboard, Chunk },
 } = require('chocolatin');
 
 const { DEV } = require('./metadata');
 
-// Mixins, Loaders and Plugins
-module.exports = burn(
-  [
-    Input({
-      vendor: ['webpack-dev-server/client?http://0.0.0.0:3003', 'webpack/hot/only-dev-server', './src/vendor.js'],
-      app: ['webpack-dev-server/client?http://0.0.0.0:3003', 'webpack/hot/only-dev-server', './src/index.js', './src/critical.css'],
-    }),
-    Output('/tmp/', '[name].js', 'http://localhost:3003/'),
-    Server('localhost', 3003),
-    Target('web'),
+server({
+  mixins: [
+    Io(
+      {
+        vendor: ['webpack-dev-server/client?http://0.0.0.0:3000', 'webpack/hot/only-dev-server', './src/vendor.js'],
+        app: ['webpack-dev-server/client?http://0.0.0.0:3000', 'webpack/hot/only-dev-server', './src/index.js', './src/critical.css'],
+      },
+      { path: '/', filename: '[name].js' },
+      'web'
+    ),
   ],
-  [
-    Assets(),
-    Css([
-      require('autoprefixer')({ browsers: ['last 2 versions', 'ie > 8'] }),
-      require('css-mqpacker')(),
-    ], /\.css$/, ['style']),
-    EsLint(),
-  ],
-  [
-    Browser('http://localhost', 3003),
+  loaders: [AssetsUrl, CssInline, Js],
+  plugins: [
+    Browser('http://localhost', 3000),
     Define('development', DEV),
     HtmlGenerator('./src/index.html'),
+    Chunk({ name: 'vendor.[chunkhash:8].js' }),
     DevTool(true),
     Hmr(),
     Dashboard(),
     NoError(),
   ]
-);
+});

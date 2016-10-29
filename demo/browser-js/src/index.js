@@ -1,7 +1,7 @@
-import buttonComponent from './component/button'
+var buttonComponent = require('./component/button');
 
-function render (element) {
-  element.appendChild(buttonComponent({ name: 'My btn !' }))
+function render(element) {
+  element.appendChild(buttonComponent({ name: 'My btn !' }));
 }
 
-render(document.getElementById('app'))
+render(window.document.getElementById('app'));
