@@ -2,7 +2,12 @@
 
 const ext = ['.stylus'];
 
-const wrapper = {};
+const wrapper = {
+  postcss: [
+    require('autoprefixer')({ browsers: ['last 2 versions', 'ie > 8'] }),
+    require('css-mqpacker')(),
+  ],
+};
 
 const pre = {};
 
@@ -13,17 +18,10 @@ const loader = {
 
 const post = {};
 
-/**
- * PostCSS example :
- [
-   require('autoprefixer')({ browsers: ['last 2 versions', 'ie > 8'] }),
-   require('css-mqpacker')(),
- ]
- */
-module.exports = (postcss = [], test = /\.stylus/, more = []) => ({
+module.exports = {
   ext,
-  wrapper: Object.assign(wrapper, { postcss: [...postcss] }),
+  wrapper,
   pre,
-  loader: Object.assign(loader, { test, loaders: [...more, ...loader.loaders] }),
+  loader,
   post,
-});
+};

@@ -8,7 +8,7 @@ const pre = {};
 
 const loader = {
   test: /\.html$/,
-  loaders: 'html',
+  loaders: 'raw',
   exclude: /index\.html$/,
 };
 

@@ -2,9 +2,18 @@
 
 const ext = ['.js', '.ts', '.tsx'];
 
-const wrapper = {};
+const wrapper = {
+  tslint: {
+    emitErrors: true,
+    failOnHint: true,
+  },
+};
 
-const pre = {};
+const pre = {
+  test: /\.(ts|tsx)$/,
+  loader: 'tslint',
+  exclude: /node_modules/,
+};
 
 const loader = {
   test: /\.(ts|tsx)$/,
@@ -13,10 +22,10 @@ const loader = {
 
 const post = {};
 
-module.exports = () => ({
+module.exports = {
   ext,
   wrapper,
   pre,
   loader,
   post,
-});
+};

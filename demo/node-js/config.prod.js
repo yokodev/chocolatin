@@ -2,27 +2,22 @@
 
 const {
   burn,
-  mixins: { Input, Output, Target },
-  loaders: { EsLint },
+  mixins: { Io },
+  loaders: { Js },
   plugins: { Clean, Define, ProgressBar, Minify },
 } = require('chocolatin');
 
 const { PROD } = require('./metadata');
 
-// Mixins, Loaders and Plugins
-module.exports = burn(
-  [
-    Input({ index: ['./src/index.js'] }),
-    Output('./dist/'),
-    Target('node'),
+burn({
+  mixins: [
+    Io({ app: ['./src/index.js'] }, { path: './dist', filename: '[name].js' }, 'node'),
   ],
-  [
-    EsLint(),
-  ],
-  [
+  loaders: [Js],
+  plugins: [
     Clean(['dist']),
     Define('production', PROD),
     ProgressBar(),
     Minify(),
-  ]
-);
+  ],
+});

@@ -2,9 +2,6 @@
 
 const { optimize: { CommonsChunkPlugin } } = require('webpack');
 
-const wrapper =
-  (chunky = { name: 'vendor', minChunks: Infinity, filename: 'vendor.[chunkhash:8].js', }) =>
-    provider =>
-      new CommonsChunkPlugin(chunky);
+const wrapper = chunk => provider => new CommonsChunkPlugin(chunk);
 
 module.exports = wrapper;

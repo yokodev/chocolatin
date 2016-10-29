@@ -1,6 +1,6 @@
 'use strict';
 
-const ext = ['.js'];
+const ext = ['.js', '.jsx'];
 
 const wrapper = {
   babel: {
@@ -15,7 +15,7 @@ const pre = {
 };
 
 const loader = {
-  test: /\.js$/,
+  test: /\.(js|jsx)$/,
   loader: 'babel',
   exclude: /node_modules/,
 };

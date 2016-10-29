@@ -17,10 +17,10 @@ const loader = {
 
 const post = {};
 
-module.exports = () => ({
+module.exports = {
   ext,
   wrapper,
   pre,
   loader,
   post,
-});
+};

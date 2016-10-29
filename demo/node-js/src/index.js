@@ -1,3 +1,5 @@
-var test = 'METADATA : ' + METADATA.API_URL
+/* global METADATA */
 
-console.log(test)
+var test = 'METADATA : ' + METADATA.API_URL;
+
+console.log(test);

@@ -1,4 +1,13 @@
+sudo: false
+
 language: node_js
+
 node_js:
-  - "6"
-script: npm install
+  - 6
+
+install:
+  - npm install
+
+script:
+  - npm run ci
+  - ./demo/node-js/test.sh

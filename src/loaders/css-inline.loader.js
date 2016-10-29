@@ -13,7 +13,7 @@ const pre = {};
 
 const loader = {
   test: /\.css$/,
-  loaders: ['css', 'csscomb', 'postcss'],
+  loaders: ['style', 'css', 'csscomb', 'postcss'],
 };
 
 const post = {};

@@ -1,6 +1,6 @@
 'use strict';
 
-const ext = ['.css'];
+const ext = ['.scss'];
 
 const wrapper = {
   postcss: [
@@ -12,8 +12,8 @@ const wrapper = {
 const pre = {};
 
 const loader = {
-  test: /\.css$/,
-  loaders: ['css', 'csscomb', 'postcss'],
+  test: /\.scss$/,
+  loaders: ['inline', 'css', 'csscomb', 'postcss', 'sass'],
 };
 
 const post = {};

@@ -1,23 +1,22 @@
 'use strict';
 
-const ext = ['.html'];
+const ext = [];
 
 const wrapper = {};
 
 const pre = {};
 
 const loader = {
-  test: /\.html$/,
-  loaders: 'html',
-  exclude: /index\.html$/,
+  test: /\.(png|jpe?g|gif|svg|woff2?|eot|ttf|otf|wav)(\?.*)?$/,
+  loader: 'file',
 };
 
 const post = {};
 
-module.exports = () => ({
+module.exports = {
   ext,
   wrapper,
   pre,
   loader,
   post,
-});
+};
