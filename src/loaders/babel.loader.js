@@ -3,9 +3,6 @@
 const ext = ['.js'];
 
 const wrapper = {
-  babel: {
-    babelrc: '.babelrc',
-  },
   xo: {
     envs: ['node', 'browser'],
     esnext: true,
@@ -33,6 +30,13 @@ const loader = {
   test: /\.js$/,
   loader: 'babel',
   exclude: /node_modules/,
+  query: {
+    presets: [
+      ['es2015', { 'modules': false }],
+      'stage-2',
+    ],
+    plugins: ['transform-runtime'],
+  },
 };
 
 const post = {};
