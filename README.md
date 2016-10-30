@@ -247,7 +247,7 @@ You can copy directory or files.
 
 ### How i can manage template and style with Angular 2 ?
 
-Use templateUrl and stylesUrl in @Component with HtmlRaw, Css (or/and Sass/Stylus), TypeScriptNg2 loaders.
+Use templateUrl and styleUrls in @Component with HtmlRaw, Css (or/and Sass/Stylus), TypeScriptNg2 loaders.
 
 ### How i can use ES6/ES7 features ?
 
