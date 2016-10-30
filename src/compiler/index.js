@@ -26,7 +26,7 @@ const onError = (err, stats) => {
   }
 
   if (stats.hasWarnings()) {
-    eachWarn(warnings);
+    eachWarn(info.warnings);
   }
 
   console.log('[CHOCOLATIN] Build completed');
