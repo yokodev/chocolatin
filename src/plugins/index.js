@@ -18,7 +18,6 @@ const Ng2FixContext = require('./ng2.plugin.js');
 const NoError = require('./no-error.plugin.js');
 const ProgressBar = require('./progress-bar.plugin.js');
 const Provide = require('./provide.plugin.js');
-const TypeDoc = require('./typedoc.plugin.js');
 
 module.exports = {
   AssetsGenerator,
@@ -39,5 +38,4 @@ module.exports = {
   NoError,
   ProgressBar,
   Provide,
-  TypeDoc,
 };
