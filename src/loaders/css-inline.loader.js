@@ -2,18 +2,19 @@
 
 const autoprefixer = require('autoprefixer');
 const mqPacker = require('css-mqpacker');
+const cssComb = require('postcss-csscomb');
 
 const ext = ['.css'];
 
 const wrapper = {
-  postcss: [autoprefixer({ browsers: ['last 2 versions', 'ie > 8'] }), mqPacker()],
+  postcss: [autoprefixer({ browsers: ['last 2 versions', 'ie > 8'] }), mqPacker(), cssComb('zen')],
 };
 
 const pre = {};
 
 const loader = {
   test: /\.css$/,
-  loaders: ['style', 'css', 'csscomb', 'postcss'],
+  loaders: ['style', 'css', 'postcss'],
 };
 
 const post = {};
