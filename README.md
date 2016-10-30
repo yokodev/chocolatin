@@ -55,15 +55,47 @@ node ./build.js
 
 You can ship the "demo" directory for some example in different environment with Babel, TypeScript, Node.js, Angular 2, React, Electron, ...
 
-# API
+# Public API
 
 ##### provide({ mixins: Array\<Object>, loaders: Array\<Object>, plugins: Array\<Function> )): WebPack Configuration
 
+Provide take Chocolatin configuration and transform it into WebPack 2 configuration.
+
+```sh
+node ./build.js
+```
+
 ##### burn({ mixins: Array\<Object>, loaders: Array\<Object>, plugins: Array\<Function> )): WebPack Compiler
+
+Burn take Chocolatin configuration and build them with WebPack.
+
+```sh
+node ./build.js
+```
 
 ##### watch({ mixins: Array\<Object>, loaders: Array\<Object>, plugins: Array\<Function> )): WebPack Watcher
 
+Watch take Chocolatin configuration and watch files with WebPack.
+
+```sh
+node ./build.js
+```
+
 ##### server({ mixins: Array\<Object>, loaders: Array\<Object>, plugins: Array\<Function> )): WebPack Dev Server
+
+Server take Chocolatin configuration and create server on http://localhost:3000. Then, watch files.
+
+You can use Hmr plugins to start Hot Module replacement.
+
+```sh
+node ./build.js
+```
+
+If you need better design, install "webpack-dashboard" npm package in your project and start server with :
+
+```js
+webpack-dashboard -- node ./build.js
+```
 
 ##### mixins : all mixins available.
 
@@ -157,3 +189,37 @@ Available plugins :
 - NoError : disable error.
 - ProgressBar : add progress bar in compilation.
 - Provide : provide external module in global scope (usefull for jQuery or external old-lib).
+
+# Node.js "Hello world"
+
+```js
+// src/index.js
+console.log('Hello world');
+```
+
+```js
+// build.js
+'use strict';
+
+const {
+  burn,
+  mixins: { Io },
+  loaders: { Js },
+  plugins: { Clean, Define, ProgressBar, Minify },
+} = require('chocolatin');
+
+burn({
+  mixins: [
+    Io({ app: ['./src/index.js'] }, { path: './dist', filename: '[name].js' }, 'node'),
+  ],
+  loaders: [Js],
+  plugins: [
+    Clean(['dist']),
+    Define('production'),
+    ProgressBar(),
+    Minify(),
+  ],
+});
+```
+
+
