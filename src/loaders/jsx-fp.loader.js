@@ -24,8 +24,8 @@ const wrapper = {
       'fp/no-mutation': [
         2,
         {
-          'commonjs': true,
-          'exceptions': [
+          commonjs: true,
+          exceptions: [
             {
               property: 'propTypes',
             },
