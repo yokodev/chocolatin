@@ -119,3 +119,40 @@ Available loaders:
 - TypeScript : handle TypeScript and add linter.
 - TypeScriptNg2 : handle TypeScript, Angular 2 template/style loader and add linter.
 - Vue : handle Vue file.
+
+Nota :
+
+- Babel use stage-2 : you can use async/await, generator, ...
+- Class decorator isn't available without TypeScript or polyfill.
+- Css/Sass/Stylus loader have autoprefixer and try to group media-query.
+- We use Xo linter for JavaScript (or Tslint with TypeScript).
+
+# Plugins
+
+Plugins are curried function who can be unary or 1 ary.
+
+They return a function who will take WebPack configuration as argument (with mixins + loaders apply) and let you :
+
+- Change WebPack configuration if needed.
+- Return WebPack or personal plugins.
+
+Available plugins :
+
+- AssetsGenerator : create assets.json file with assets path.
+- Browser : start browser after compilation.
+- Chunk : chunk and split code.
+- Clean : clean file/directory before compilation.
+- Copy : copy file/directory after compilation.
+- Dashboard : enabled WebPack dashboard (can be used on server mode).
+- Define : define environment and global METADATA.
+- DevTool : enable/disable dev-tool and debug mode.
+- Extract : extract style (needed if you use CssExtract/SassExtract/StylusExtract loader).
+- ForkChecker: deserve TypeScript type check in other thread.
+- Hmr : start Hot Module replacement.
+- HtmlGenerator : copy an HTML file as "index.html" with script/style injection.
+- Md5Hash : transform hash in md5.
+- Minify : minify output.
+- Ng2FixContext : mandatory when Angular 2 is used.
+- NoError : disable error.
+- ProgressBar : add progress bar in compilation.
+- Provide : provide external module in global scope (usefull for jQuery or external old-lib).
