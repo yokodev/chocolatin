@@ -1,5 +1,7 @@
 'use strict';
 
+const { XO_JS } = require('./static/xo');
+
 const ext = ['.js'];
 
 const wrapper = {
@@ -7,11 +9,7 @@ const wrapper = {
     space: true,
     envs: ['node', 'browser'],
     globals: ['METADATA', 'ENV', 'NODE_ENV'],
-    rules: {
-      'object-curly-spacing': 0,
-      'import/no-unresolved': 0,
-      'import/no-unassigned-import': 0,
-    },
+    rules: XO_JS,
   },
 };
 

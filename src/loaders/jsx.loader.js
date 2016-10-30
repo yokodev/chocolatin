@@ -1,5 +1,8 @@
 'use strict';
 
+const { XO_JSX } = require('./static/xo');
+const { BABEL_STAGE_2_REACT } = require('./static/babel');
+
 const ext = ['.js', '.jsx'];
 
 const wrapper = {
@@ -9,12 +12,7 @@ const wrapper = {
     envs: ['node', 'browser'],
     plugins: ['react'],
     globals: ['METADATA', 'ENV', 'NODE_ENV'],
-    rules: {
-      'object-curly-spacing': 0,
-      'import/no-unresolved': 0,
-      'import/no-unassigned-import': 0,
-      'no-unused-vars': 0,
-    },
+    rules: XO_JSX,
   },
 };
 
@@ -28,14 +26,7 @@ const loader = {
   test: /\.(js|jsx)$/,
   loader: 'babel',
   exclude: /node_modules/,
-  query: {
-    presets: [
-      ['es2015', { 'modules': false }],
-      'stage-2',
-      'react',
-    ],
-    plugins: ['react-hot-loader/babel', 'transform-runtime'],
-  },
+  query: BABEL_STAGE_2_REACT,
 };
 
 const post = {};

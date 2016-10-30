@@ -1,5 +1,8 @@
 'use strict';
 
+const { XO_BABEL } = require('./static/xo');
+const { BABEL_STAGE_2 } = require('./static/babel');
+
 const ext = ['.js'];
 
 const wrapper = {
@@ -8,11 +11,7 @@ const wrapper = {
     space: true,
     envs: ['node', 'browser'],
     globals: ['METADATA', 'ENV', 'NODE_ENV'],
-    rules: {
-      'object-curly-spacing': 0,
-      'import/no-unresolved': 0,
-      'import/no-unassigned-import': 0,
-    },
+    rules: XO_BABEL,
   },
 };
 
@@ -26,13 +25,7 @@ const loader = {
   test: /\.js$/,
   loader: 'babel',
   exclude: /node_modules/,
-  query: {
-    presets: [
-      ['es2015', { 'modules': false }],
-      'stage-2',
-    ],
-    plugins: ['transform-runtime'],
-  },
+  query: BABEL_STAGE_2,
 };
 
 const post = {};
