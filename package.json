@@ -1,6 +1,6 @@
 {
   "name": "chocolatin",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Make life in your project : build, start, dance.",
   "scripts": {
     "lint": "npm run xo -- ./src",
@@ -60,11 +60,15 @@
     "node-sass": "^3.10.1",
     "postcss-loader": "^1.1.0",
     "progress-bar-webpack-plugin": "^1.9.0",
+    "pug": "^2.0.0-beta6",
+    "pug-loader": "^2.3.0",
     "ramda": "^0.22.1",
     "raw-loader": "^0.5.1",
     "react-hot-loader": "^3.0.0-beta.5",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^2.3.1",
     "to-string-loader": "^1.1.5",
     "tslint": "^3.15.1",
     "tslint-loader": "^2.1.5",

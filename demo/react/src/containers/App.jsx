@@ -4,7 +4,7 @@ import { Match, Miss } from 'react-router';
 import Home from './Home';
 import NotFound from './NotFound';
 
-class App extends React.component {
+class App extends React.Component {
   render() {
     return (
       <div>

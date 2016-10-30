@@ -3,7 +3,7 @@
 const {
   burn,
   mixins: { Io },
-  loaders: { AssetsUrl, TypeScriptNg2, HtmlRaw, Sass },
+  loaders: { AssetsUrl, TypeScriptNg2, HtmlRaw, Sass, CssExtract },
   plugins: {
     Clean,
     Define,
@@ -12,8 +12,8 @@ const {
     AssetsGenerator,
     HtmlGenerator,
     Chunk,
-    DevTool,
     Extract,
+    DevTool,
     Md5Hash,
     Ng2FixContext,
     ForkChecker,
@@ -25,24 +25,24 @@ const { PROD } = require('./metadata');
 burn({
   mixins: [
     Io(
-      { vendor: ['./src/vendor.ts'], app: ['./src/main.browser.ts', './src/critical.scss'] },
+      { vendor: ['./src/vendor.ts'], app: ['./src/main.browser.ts', './src/critical.css'] },
       { path: './dist', filename: '[name].[hash:8].js' },
       'web'
     ),
   ],
-  loaders: [AssetsUrl, TypeScriptNg2, Sass, HtmlRaw],
+  loaders: [AssetsUrl, TypeScriptNg2, Sass, CssExtract, HtmlRaw],
   plugins: [
     Clean(['dist']),
     Define('production', PROD),
     HtmlGenerator('./src/index.html'),
     DevTool(false),
     Ng2FixContext('./src'),
-    Chunk({ name: 'vendor', filename: 'vendor.[hash:8].js' }),
+    Chunk({ name: 'vendor', filename: '[name].[hash:8].js' }),
     AssetsGenerator(),
     ProgressBar(),
     Minify(),
-    Md5Hash(),
     Extract(),
+    Md5Hash(),
     ForkChecker(),
   ],
 });

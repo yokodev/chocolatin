@@ -1,6 +1,6 @@
 import React from 'react';
 
-class NotFound extends React.component {
+class NotFound extends React.Component {
   render() {
     return (
       <h1>404</h1>

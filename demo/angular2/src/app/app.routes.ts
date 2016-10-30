@@ -5,7 +5,7 @@ import { Home } from './components/home';
 const HOME: Route = {
   path: '',
   component: Home,
-}
+};
 
 const OTHER: Route = {
   path: '**',

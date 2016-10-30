@@ -7,7 +7,7 @@ const wrapper = {
     esnext: true,
     space: true,
     envs: ['node', 'browser'],
-    plugins: ['react, fp'],
+    plugins: ['react', 'fp'],
     globals: ['METADATA', 'ENV', 'NODE_ENV'],
     rules: {
       'object-curly-spacing': 0,
@@ -63,6 +63,7 @@ const wrapper = {
       'fp/no-throw': 2,
       'fp/no-valueof-field': 2,
       'no-var': 2,
+      'no-unused-vars': 0,
       'import/no-named-as-default': 0,
       'react/require-extension': 'off',
     },

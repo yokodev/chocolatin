@@ -1,5 +1,6 @@
 import React from 'react';
 import { Match, Miss } from 'react-router';
+import functional from 'react-functional';
 
 import Home from './Home';
 import NotFound from './NotFound';
@@ -11,4 +12,4 @@ const App = () => (
   </div>
 );
 
-export default App;
+export default functional(App);

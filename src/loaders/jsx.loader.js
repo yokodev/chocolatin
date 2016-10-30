@@ -13,6 +13,7 @@ const wrapper = {
       'object-curly-spacing': 0,
       'import/no-unresolved': 0,
       'import/no-unassigned-import': 0,
+      'no-unused-vars': 0,
     },
   },
 };
