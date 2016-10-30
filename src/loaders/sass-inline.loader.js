@@ -1,19 +1,19 @@
 'use strict';
 
+const autoprefixer = require('autoprefixer');
+const mqPacker = require('css-mqpacker');
+
 const ext = ['.scss'];
 
 const wrapper = {
-  postcss: [
-    require('autoprefixer')({ browsers: ['last 2 versions', 'ie > 8'] }),
-    require('css-mqpacker')(),
-  ],
+  postcss: [autoprefixer({ browsers: ['last 2 versions', 'ie > 8'] }), mqPacker()],
 };
 
 const pre = {};
 
 const loader = {
   test: /\.scss$/,
-  loaders: ['inline', 'css', 'csscomb', 'postcss', 'sass'],
+  loaders: ['style', 'css', 'csscomb', 'postcss', 'sass'],
 };
 
 const post = {};

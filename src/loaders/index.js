@@ -14,8 +14,10 @@ const Jsx = require('./jsx.loader.js');
 const JsxFp = require('./jsx-fp.loader.js');
 const Pug = require('./pug.loader.js');
 const Sass = require('./sass.loader.js');
-const SassInline = require('./sass-inline.loader.js');
+const SassExtract = require('./sass-extract.loader.js');
+const SassInline = require('./sass-inline.loasder.js');
 const Stylus = require('./stylus.loader.js');
+const StylusExtract = require('./stylus-extract.loader.js');
 const StylusInline = require('./stylus-inline.loader.js');
 const TypeScript = require('./ts.loader.js');
 const TypeScriptNg2 = require('./ts-ng2.loader.js');
@@ -35,8 +37,10 @@ module.exports = {
   JsxFp,
   Pug,
   Sass,
+  SassExtract,
   SassInline,
   Stylus,
+  StylusExtract,
   StylusInline,
   TypeScript,
   TypeScriptNg2,
