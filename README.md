@@ -5,10 +5,12 @@
 When you start with WebPack, you need to :
 
 - Install a lot of package (loaders, plugins, ...).
-- Make WebPack configuration with messy object in different environment (dev, prod, testing, ...).
+- Make WebPack configuration with messy deep object in different environment (dev, prod, testing, ...).
 - Setup external tools configuration (linter, .babelrc file, ...).
 
-Chocolatin help developers to leverage friction & time-lost with WebPack configuration.
+Chocolatin help developers to leverage friction & time-lost with WebPack configuration. Focus on project instead of build system.
+
+We use more functional way to describe your app, with low object configuration.
 
 # How to install
 
@@ -62,3 +64,58 @@ You can ship the "demo" directory for some example in different environment with
 ##### watch({ mixins: Array\<Object>, loaders: Array\<Object>, plugins: Array\<Function> )): WebPack Watcher
 
 ##### server({ mixins: Array\<Object>, loaders: Array\<Object>, plugins: Array\<Function> )): WebPack Dev Server
+
+##### mixins : all mixins available.
+
+##### loaders : all loaders available.
+
+##### plugins : all plugins available.
+
+# Mixins
+
+Mixins are function with any arity, who return an object who will be merge to WebPack base configuration.
+
+Only one mixin is available : Io.
+
+the Io mixin describe how your app work :
+
+- 1st argument is a WebPack entry object. Mandatory.
+- 2nd argument is a WebPack output object. Mandatory.
+- 3rd argument is a string who describe WebPack compiler target : web | webworker | node | electron. Mandatory.
+- 4th argument are externals package who need to stay in node_modules, like socket.io server package. Optional.
+
+That's all. You can make your own mixin if you need to share and dispatch your own configuration.
+
+# Loaders
+
+Loader handle file in your project. Basicly, it's an object with 4 props :
+
+- wrap : options.
+- pre : preloader configuration
+- loader : loader configuration.
+- post : postloader configuration.
+
+Available loaders: 
+
+- AssetsFile : handle assets as file.
+- AssetsUrl : handle assets as url (base64), or file if they're to big.
+- Babel : handle ES6 with Babel (stage-2) and add linter.
+- Css : handle CSS as string.
+- CssExtract : handle CSS and extract in output file.
+- CssInline : handle CSS and inline them in document head.
+- Html : handle HTML.
+- HtmlRaw : handle HTML as string.
+- Js : handle JavaScript classicly and add linter.
+- Json : handle JSON as file.
+- Jsx : handle ES6 with Babel (stage-2), support React JSX and add linter.
+- JsxFp : handle ES6 with Babel (stage-2), support React JSX and add linter with FP programing hard-rules.
+- Pug : handle Jade/Pug file.
+- Sass : handle SCSS as string.
+- SassExtract : handle SCSS and extract in output file.
+- SassInline : handle SCSS and inline them in document head.
+- Stylus : handle Stylus as string.
+- StylusExtract : handle Stylus and extract in output file.
+- StylusInline : handle Stylus and inline them in document head.
+- TypeScript : handle TypeScript and add linter.
+- TypeScriptNg2 : handle TypeScript, Angular 2 template/style loader and add linter.
+- Vue : handle Vue file.
