@@ -194,6 +194,8 @@ Available plugins :
 
 ```js
 // src/index.js
+'use strict';
+
 console.log('Hello world');
 ```
 
