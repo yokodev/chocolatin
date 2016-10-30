@@ -16,7 +16,7 @@ server({
         vendor: ['webpack-dev-server/client?http://0.0.0.0:3000', 'webpack/hot/only-dev-server', './src/vendor.ts'],
         app: ['webpack-dev-server/client?http://0.0.0.0:3000', 'webpack/hot/only-dev-server', './src/main.browser.ts', './src/critical.scss'],
       },
-      { path: '/', filename: '[name].js' },
+      { path: '/', filename: '[name].[hash:8].js' },
       'web'
     ),
   ],
@@ -26,7 +26,7 @@ server({
     HtmlGenerator('./src/index.html'),
     DevTool(true),
     Ng2FixContext('./src'),
-    Chunk({ name: ['vendor'] }),
+    Chunk({ name: 'vendor', filename: 'vendor.[hash:8].js' }),
     Browser(),
     Hmr(),
     Dashboard(),

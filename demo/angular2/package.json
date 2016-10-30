@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "start": "webpack-dashboard -- node --config ./config.dev.js",
-    "build": "node --config ./config.prod.js",
+    "start": "webpack-dashboard -- node ./config.dev.js",
+    "build": "node ./config.prod.js",
     "webpack-dashboard": "webpack-dashboard"
   },
   "author": "Meillet Robin <robin.meillet@epitech.eu>",
@@ -10,7 +10,7 @@
     "@types/core-js": "^0.9.34",
     "@types/node": "^6.0.45",
     "codelyzer": "^1.0.0-beta.3",
-    "chocolatin": "^1.0.3"
+    "chocolatin": "^1.0.4"
   },
   "dependencies": {
     "@angular/common": "2.1.1",

@@ -3,7 +3,7 @@
 const {
   burn,
   mixins: { Io },
-  loaders: { AssetsUrl, TypeScriptNg2, HtmlRaw },
+  loaders: { AssetsUrl, TypeScriptNg2, HtmlRaw, SassExtract },
   plugins: {
     Clean,
     Define,
@@ -13,6 +13,7 @@ const {
     HtmlGenerator,
     Chunk,
     DevTool,
+    Extract,
     Md5Hash,
     Ng2FixContext,
     ForkChecker,
@@ -25,22 +26,23 @@ burn({
   mixins: [
     Io(
       { vendor: ['./src/vendor.ts'], app: ['./src/main.browser.ts', './src/critical.scss'] },
-      { path: './dist', filename: '[name].js' },
+      { path: './dist', filename: '[name].[hash:8].js' },
       'web'
     ),
   ],
-  loaders: [AssetsUrl, TypeScriptNg2, HtmlRaw],
+  loaders: [AssetsUrl, TypeScriptNg2, SassExtract, HtmlRaw],
   plugins: [
     Clean(['dist']),
     Define('production', PROD),
     HtmlGenerator('./src/index.html'),
     DevTool(false),
     Ng2FixContext('./src'),
-    Chunk({ name: ['vendor'] }),
+    Chunk({ name: 'vendor', filename: 'vendor.[hash:8].js' }),
     AssetsGenerator(),
     ProgressBar(),
     Minify(),
     Md5Hash(),
+    Extract(),
     ForkChecker(),
   ],
 });

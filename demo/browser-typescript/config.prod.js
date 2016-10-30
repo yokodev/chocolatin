@@ -25,7 +25,7 @@ burn({
   mixins: [
     Io(
       { vendor: ['./src/vendor.ts'], app: ['./src/index.ts', './src/critical.css'] },
-      { path: './dist', filename: '[name].js' },
+      { path: './dist', filename: '[name].[hash:8].js' },
       'web'
     ),
   ],
@@ -34,7 +34,7 @@ burn({
     Clean(['dist']),
     Define('production', PROD),
     HtmlGenerator('./src/index.html'),
-    Chunk({ name: 'vendor', filename: 'vendor.[chunkhash:8].js' }),
+    Chunk({ name: 'vendor', filename: 'vendor.[hash:8].js' }),
     DevTool(false),
     AssetsGenerator(),
     ProgressBar(),
