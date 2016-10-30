@@ -176,7 +176,7 @@ Available plugins :
 - Chunk : chunk and split code.
 - Clean : clean file/directory before compilation.
 - Copy : copy file/directory after compilation.
-- Dashboard : enable WebPack dashboard (can be used on server mode). You need to install "webpack-dashboard" npm package.
+- Dashboard : enable WebPack dashboard on server. You need to install "webpack-dashboard" npm package.
 - Define : define environment and global METADATA.
 - DevTool : enable/disable dev-tool and debug mode.
 - Extract : extract style (needed if you use CssExtract/SassExtract/StylusExtract loader).
