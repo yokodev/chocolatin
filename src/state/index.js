@@ -1,3 +1,5 @@
+'use strict';
+
 const { mergeWithKey, prop, merge } = require('ramda');
 
 const initialState = () => ({
