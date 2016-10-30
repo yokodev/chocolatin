@@ -124,8 +124,9 @@ Nota :
 
 - Babel use stage-2 : you can use async/await, generator, ...
 - Class decorator isn't available without TypeScript or polyfill.
-- Css/Sass/Stylus loader have autoprefixer and try to group media-query.
+- Css/Sass/Stylus loader have super-power : autoprefixer, group media-query and sort CSS properties.
 - We use Xo linter for JavaScript (or Tslint with TypeScript).
+- Unused code is removed with three-shaking.
 
 # Plugins
 
