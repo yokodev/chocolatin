@@ -261,7 +261,7 @@ We use Xo for JavaScript/Babel/Jsx/JsxFp loaders and TsLint for TypeScript/TypeS
 
 ### How i can override linter rules ?
 
-- For TypeScript, just make .tslint file.
+- For TypeScript, just make tslint.json file.
 - For JavaScript, Babel or Jsx/JsxFp, you can't.
 
 We will do later fix on loaders to make them more configurable.
