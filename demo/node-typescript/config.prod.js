@@ -20,5 +20,5 @@ burn({
     ProgressBar(),
     Minify(),
     ForkChecker(),
-  ]
+  ],
 });

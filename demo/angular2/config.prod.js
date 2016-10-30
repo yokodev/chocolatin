@@ -2,8 +2,8 @@
 
 const {
   burn,
-  mixins: { Input, Output, Target },
-  loaders: { Assets, Ng2TypeScript, TsLint, Sass, Html },
+  mixins: { Io },
+  loaders: { AssetsUrl, TypeScriptNg2, HtmlRaw },
   plugins: {
     Clean,
     Define,
@@ -21,39 +21,26 @@ const {
 
 const { PROD } = require('./metadata');
 
-const postcss = [
-  require('autoprefixer')({ browsers: ['last 2 versions', 'ie > 8'] }),
-  require('css-mqpacker')(),
-];
-
-// Mixins, Loaders and Plugins
-module.exports = burn(
-  [
-    Input({
-      vendor: ['./src/vendor.ts'],
-      app: ['./src/main.browser.ts', './src/critical.scss'],
-    }),
-    Output('./dist/'),
-    Target('web'),
+burn({
+  mixins: [
+    Io(
+      { vendor: ['./src/vendor.ts'], app: ['./src/main.browser.ts', './src/critical.scss'] },
+      { path: './dist', filename: '[name].js' },
+      'web'
+    ),
   ],
-  [
-    Assets(),
-    Ng2TypeScript(),
-    TsLint(),
-    Sass(postcss, /\.scss$/, ['to-string']),
-    Html(),
-  ],
-  [
+  loaders: [AssetsUrl, TypeScriptNg2, HtmlRaw],
+  plugins: [
     Clean(['dist']),
     Define('production', PROD),
-    AssetsGenerator('./dist/'),
     HtmlGenerator('./src/index.html'),
     DevTool(false),
     Ng2FixContext('./src'),
+    Chunk({ name: ['vendor'] }),
+    AssetsGenerator(),
     ProgressBar(),
     Minify(),
-    Chunk({ name: ['vendor']}),
     Md5Hash(),
     ForkChecker(),
-  ]
-);
+  ],
+});

@@ -7,7 +7,7 @@
   "author": "Meillet Robin <robin.meillet@epitech.eu>",
   "license": "MIT",
   "devDependencies": {
-    "webpack-dashboard": "^0.2.0",
-    "chocolatin": "^1.0.0"
+    "chocolatin": "^1.0.1",
+    "webpack-dashboard": "^0.2.0"
   }
 }

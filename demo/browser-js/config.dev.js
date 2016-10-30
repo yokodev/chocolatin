@@ -30,5 +30,5 @@ server({
     Hmr(),
     Dashboard(),
     NoError(),
-  ]
+  ],
 });

@@ -1,19 +1,19 @@
 'use strict';
 
+const autoprefixer = require('autoprefixer');
+const mqPacker = require('css-mqpacker');
+
 const ext = ['.stylus'];
 
 const wrapper = {
-  postcss: [
-    require('autoprefixer')({ browsers: ['last 2 versions', 'ie > 8'] }),
-    require('css-mqpacker')(),
-  ],
+  postcss: [autoprefixer({ browsers: ['last 2 versions', 'ie > 8'] }), mqPacker()],
 };
 
 const pre = {};
 
 const loader = {
   test: /\.stylus$/,
-  loaders: ['inline', 'css', 'csscomb', 'postcss', 'stylus'],
+  loaders: ['style', 'css', 'csscomb', 'postcss', 'stylus'],
 };
 
 const post = {};

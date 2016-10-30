@@ -22,12 +22,12 @@ burn({
     Clean(['dist']),
     Define('production', PROD),
     HtmlGenerator('./src/index.html'),
-    Chunk({ name: 'vendor', filename: 'vendor.[chunkhash:8].js' }),
+    Chunk({ name: ['vendor'] }),
     DevTool(false),
     AssetsGenerator(),
     ProgressBar(),
     Minify(),
     Extract(),
     Md5Hash(),
-  ]
+  ],
 });

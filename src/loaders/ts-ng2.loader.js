@@ -1,6 +1,6 @@
 'use strict';
 
-const ext = ['.js', '.ts', '.tsx'];
+const ext = ['.js', '.ts'];
 
 const wrapper = {
   tslint: {
@@ -10,13 +10,13 @@ const wrapper = {
 };
 
 const pre = {
-  test: /\.(ts|tsx)$/,
+  test: /\.ts$/,
   loader: 'tslint',
   exclude: /node_modules/,
 };
 
 const loader = {
-  test: /\.(ts|tsx)$/,
+  test: /\.ts$/,
   loaders: ['awesome-typescript-loader', 'angular2-template-loader'],
 };
 

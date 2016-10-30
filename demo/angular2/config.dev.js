@@ -1,47 +1,36 @@
 'use strict';
 
 const {
-  burn,
-  mixins: { Input, Output, Server, Target },
-  loaders: { Assets, Ng2TypeScript, TsLint, Sass, Html },
+  server,
+  mixins: { Io },
+  loaders: { AssetsUrl, TypeScriptNg2, HtmlRaw },
   plugins: { Define, NoError, Browser, DevTool, HtmlGenerator, Hmr, Dashboard, Ng2FixContext, Chunk, ForkChecker },
 } = require('chocolatin');
 
 const { DEV } = require('./metadata');
 
-const postcss = [
-  require('autoprefixer')({ browsers: ['last 2 versions', 'ie > 8'] }),
-  require('css-mqpacker')(),
-];
-
-// Mixins, Loaders and Plugins
-module.exports = burn(
-  [
-    Input({
-      vendor: ['webpack-dev-server/client?http://0.0.0.0:3003', 'webpack/hot/only-dev-server', './src/vendor.ts'],
-      app: ['webpack-dev-server/client?http://0.0.0.0:3003', 'webpack/hot/only-dev-server', './src/main.browser.ts', './src/critical.scss'],
-    }),
-    Output('/tmp/', '[name].js', 'http://localhost:3003/'),
-    Server('localhost', 3003),
-    Target('web'),
+server({
+  mixins: [
+    Io(
+      {
+        vendor: ['webpack-dev-server/client?http://0.0.0.0:3000', 'webpack/hot/only-dev-server', './src/vendor.ts'],
+        app: ['webpack-dev-server/client?http://0.0.0.0:3000', 'webpack/hot/only-dev-server', './src/main.browser.ts', './src/critical.scss'],
+      },
+      { path: '/', filename: '[name].js' },
+      'web'
+    ),
   ],
-  [
-    Assets(),
-    Ng2TypeScript(),
-    TsLint(),
-    Sass(postcss, /\.scss$/, ['to-string']),
-    Html(),
-  ],
-  [
-    Browser('http://localhost', 3003),
+  loaders: [AssetsUrl, TypeScriptNg2, HtmlRaw],
+  plugins: [
     Define('development', DEV),
     HtmlGenerator('./src/index.html'),
     DevTool(true),
     Ng2FixContext('./src'),
-    Chunk({ name: ['vendor']}),
+    Chunk({ name: ['vendor'] }),
+    Browser(),
     Hmr(),
     Dashboard(),
     NoError(),
     ForkChecker(),
-  ]
-);
+  ],
+});

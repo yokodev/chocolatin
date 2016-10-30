@@ -4,15 +4,11 @@ const ext = ['.js', '.jsx'];
 
 const wrapper = {
   xo: {
-    envs: ['node', 'browser'],
     esnext: true,
     space: true,
+    envs: ['node', 'browser'],
     plugins: ['react, fp'],
-    globals: {
-      METADATA: true,
-      ENV: true,
-      NODE_ENV: true,
-    },
+    globals: ['METADATA', 'ENV', 'NODE_ENV'],
     rules: {
       'object-curly-spacing': 0,
       'import/no-unresolved': 0,

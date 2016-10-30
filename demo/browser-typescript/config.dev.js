@@ -31,5 +31,5 @@ server({
     Dashboard(),
     NoError(),
     ForkChecker(),
-  ]
+  ],
 });
