@@ -192,6 +192,13 @@ Available plugins :
 
 # Node.js "Hello world"
 
+```sh
+npm init
+npm i chocolatin --save-dev
+mkdir src
+touch build.js src/index.js
+```
+
 ```js
 // src/index.js
 'use strict';
@@ -224,4 +231,6 @@ burn({
 });
 ```
 
-
+```sh
+node ./build.js
+```
