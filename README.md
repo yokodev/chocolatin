@@ -109,7 +109,7 @@ Mixins are function with any arity, who return an object who will be merge to We
 
 Only one mixin is available : Io.
 
-the Io mixin describe how your app work :
+The Io mixin describe how your app work :
 
 - 1st argument is a WebPack entry object. Mandatory.
 - 2nd argument is a WebPack output object. Mandatory.
@@ -188,7 +188,7 @@ Available plugins :
 - Ng2FixContext : mandatory when Angular 2 is used.
 - NoError : disable error.
 - ProgressBar : add progress bar in compilation.
-- Provide : provide external module in global scope (usefull for jQuery or external old-lib).
+- Provide : provide external module in global scope (useful for jQuery or external old-lib).
 
 # Node.js "Hello world"
 
