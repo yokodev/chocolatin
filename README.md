@@ -105,7 +105,7 @@ webpack-dashboard -- node ./build.js
 
 # Mixins
 
-Mixins are function with any arity, who return an object who will be merge to WebPack base configuration.
+Mixins are function with n-arity, who return an object who will be merge to WebPack base configuration.
 
 Only one mixin is available : Io.
 
@@ -120,7 +120,9 @@ That's all. You can make your own mixin if you need to share and dispatch your o
 
 # Loaders
 
-Loader handle file in your project. Basicly, it's an object with 4 props :
+Loader handle file in your project.
+
+Basicly, it's just an object with 4 props :
 
 - wrap : options.
 - pre : preloader configuration
@@ -162,7 +164,7 @@ Nota :
 
 # Plugins
 
-Plugins are curried function who can be unary or 1 ary.
+Plugins are curried function who can be nullary or unary.
 
 They return a function who will take WebPack configuration as argument (with mixins + loaders apply) and let you :
 
