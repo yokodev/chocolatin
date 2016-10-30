@@ -273,3 +273,7 @@ Make .babelrc file.
 ### How i can override TypeScript rules ?
 
 Make tsconfig.json file.
+
+### How i can build multiple configuration for mono-repository big project ?
+
+You can't, we will provide this later.
