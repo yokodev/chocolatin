@@ -3,7 +3,7 @@
 const {
   burn,
   mixins: { Io },
-  loaders: { AssetsUrl, TypeScriptNg2, HtmlRaw, SassExtract },
+  loaders: { AssetsUrl, TypeScriptNg2, HtmlRaw, Sass },
   plugins: {
     Clean,
     Define,
@@ -13,7 +13,7 @@ const {
     HtmlGenerator,
     Chunk,
     DevTool,
-    Sass,
+    Extract,
     Md5Hash,
     Ng2FixContext,
     ForkChecker,
