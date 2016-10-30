@@ -8,6 +8,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/core-js": "^0.9.34",
+    "@types/node": "^6.0.46",
     "chocolatin": "^1.0.9"
   },
   "dependencies": {
