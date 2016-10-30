@@ -93,7 +93,7 @@ node ./build.js
 
 If you need better design, install "webpack-dashboard" npm package in your project and start server with :
 
-```js
+```sh
 webpack-dashboard -- node ./build.js
 ```
 
@@ -236,3 +236,40 @@ burn({
 ```sh
 node ./build.js
 ```
+
+# FAQ
+
+### How i can add static assets in my project ?
+
+Use Copy plugin : it take an array of object with from/to properties.
+
+You can copy directory or files.
+
+### How i can manage template and style with Angular 2 ?
+
+Use templateUrl and stylesUrl in @Component with HtmlRaw, Css (or/and Sass/Stylus), TypeScriptNg2 loaders.
+
+### How i can use ES6/ES7 features ?
+
+Use Babel or TypeScript loader.
+
+### How i can add a linter (EsLint or another) ?
+
+You don't need to add linter.
+
+We use Xo for JavaScript/Babel/Jsx/JsxFp loaders and TsLint for TypeScript/TypeScriptNg2 loaders.
+
+### How i can override linter rules ?
+
+- For TypeScript, just make .tslint file.
+- For JavaScript, Babel or Jsx/JsxFp, you can't.
+
+We will do later fix on loaders to make them more configurable.
+
+### How i can override Babel rules ?
+
+Make .babelrc file.
+
+### How i can override TypeScript rules ?
+
+Make tsconfig.json file.
