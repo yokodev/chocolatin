@@ -16,7 +16,7 @@ server({
         vendor: ['webpack-dev-server/client?http://0.0.0.0:3000', 'webpack/hot/only-dev-server', './src/vendor.js'],
         app: ['webpack-dev-server/client?http://0.0.0.0:3000', 'webpack/hot/only-dev-server', './src/index.jsx', './src/critical.css'],
       },
-      { path: './dist', filename: '[name].js' },
+      { path: '/', filename: '[name].[hash:8].js' },
       'web'
     ),
   ],
@@ -25,7 +25,7 @@ server({
     Define('development', DEV),
     HtmlGenerator('./src/index.html'),
     DevTool(true),
-    Chunk({ name: 'vendor', filename: 'vendor.[chunkhash:8].js' }),
+    Chunk({ name: 'vendor', filename: 'vendor.[hash:8].js' }),
     Browser(),
     Hmr(),
     Dashboard(),

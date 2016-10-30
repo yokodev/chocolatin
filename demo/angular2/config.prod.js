@@ -13,7 +13,7 @@ const {
     HtmlGenerator,
     Chunk,
     DevTool,
-    Extract,
+    Sass,
     Md5Hash,
     Ng2FixContext,
     ForkChecker,
@@ -30,7 +30,7 @@ burn({
       'web'
     ),
   ],
-  loaders: [AssetsUrl, TypeScriptNg2, SassExtract, HtmlRaw],
+  loaders: [AssetsUrl, TypeScriptNg2, Sass, HtmlRaw],
   plugins: [
     Clean(['dist']),
     Define('production', PROD),

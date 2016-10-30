@@ -4,7 +4,7 @@ const {
   server,
   mixins: { Io },
   loaders: { AssetsUrl, TypeScriptNg2, HtmlRaw },
-  plugins: { Define, NoError, Browser, DevTool, HtmlGenerator, Hmr, Dashboard, Ng2FixContext, Chunk, ForkChecker },
+  plugins: { Define, NoError, Browser, DevTool, HtmlGenerator, Hmr, Dashboard, Ng2FixContext, Chunk, Sass, ForkChecker },
 } = require('chocolatin');
 
 const { DEV } = require('./metadata');
@@ -20,7 +20,7 @@ server({
       'web'
     ),
   ],
-  loaders: [AssetsUrl, TypeScriptNg2, HtmlRaw],
+  loaders: [AssetsUrl, TypeScriptNg2, Sass, HtmlRaw],
   plugins: [
     Define('development', DEV),
     HtmlGenerator('./src/index.html'),
