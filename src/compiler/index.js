@@ -19,14 +19,14 @@ const onError = (err, stats) => {
     return;
   }
 
-  const info = stats.toJson();
+  const { errors, warnings } = stats.toJson();
 
   if (stats.hasErrors()) {
-    eachLog(info.errors);
+    eachLog(errors);
   }
 
   if (stats.hasWarnings()) {
-    eachWarn(info.warnings);
+    eachWarn(warnings);
   }
 
   console.log('[CHOCOLATIN] Build completed');
