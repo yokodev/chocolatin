@@ -61,7 +61,7 @@ const TSLINT = {
     "no-use-before-declare": true,
     "no-var-keyword": true,
     "radix": true,
-    "switch-default": true,
+    "switch-default": false,
     "triple-equals": [
       true,
       "allow-null-check"
@@ -186,7 +186,7 @@ const TSLINT_NG2 = {
     "no-duplicate-variable": true,
     "no-empty": false,
     "no-eval": true,
-    "no-null-keyword": true,
+    "no-null-keyword": false,
     "no-shadowed-variable": true,
     "no-string-literal": true,
     "no-switch-case-fall-through": true,
@@ -196,7 +196,7 @@ const TSLINT_NG2 = {
     "no-use-before-declare": true,
     "no-var-keyword": true,
     "radix": true,
-    "switch-default": true,
+    "switch-default": false,
     "triple-equals": [
       true,
       "allow-null-check"
@@ -240,19 +240,19 @@ const TSLINT_NG2 = {
       "check-catch",
       "check-else",
       "check-finally",
-      "check-whitespace",
+      "check-whitespace"
     ],
     "quotemark": [
       true,
       "single",
-      "avoid-escape",
+      "avoid-escape"
     ],
     "semicolon": [true, "always"],
     "variable-name": [
-      true,
+      false,
       "check-format",
       "allow-leading-underscore",
-      "ban-keywords",
+      "ban-keywords"
     ],
     "whitespace": [
       true,
@@ -260,9 +260,8 @@ const TSLINT_NG2 = {
       "check-decl",
       "check-operator",
       "check-separator",
-      "check-type",
-    ],
-    "import-destructuring-spacing": true,
+      "check-type"
+    ]
   },
 };
 
