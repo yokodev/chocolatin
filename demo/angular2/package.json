@@ -3,7 +3,7 @@
     "start": "webpack-dashboard -- node ./__env__/dev.js",
     "build": "node ./__env__/prod.js",
     "test": "npm run karma start",
-    "testw": "npm run test -- --auto-watch --no-single-run",
+    "testw": "npm run karma start -- --auto-watch --no-single-run",
     "webdriver:start": "npm run webdriver-manager start",
     "webdriver:update": "npm run webdriver-manager update",
     "pree2e": "npm run webdriver:update -- --standalone",
