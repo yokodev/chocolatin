@@ -34,7 +34,7 @@ describe('#reduceState', () => {
 
     expect(mergeWithKey(reduceState, prev, { state: { a: 123 } }))
       .toEqual({
-        configuration: { mixins: [], loaders: [], plugins: [] },
+        configuration,
         state: merge({ a: 123 }, initialState()),
       });
   });
