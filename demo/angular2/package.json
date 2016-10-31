@@ -30,7 +30,6 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.8.0",
     "protractor": "^4.0.10",
-    "source-map-loader": "^0.1.5",
     "ts-node": "^1.6.1",
     "webpack-dashboard": "^0.2.0"
   },
