@@ -139,6 +139,7 @@ Available loaders:
 - CssInline : handle CSS and inline them in document head.
 - Html : handle HTML.
 - HtmlRaw : handle HTML as string.
+- IstanbulInstrumenter : handle Istanbul instrumenter reporter for testing coverage.
 - Js : handle JavaScript classicly and add linter.
 - Json : handle JSON as file.
 - Jsx : handle ES6 with Babel (stage-2), support React JSX and add linter.
@@ -243,7 +244,7 @@ node ./build.js
 
 Simply use "provide" function.
 
-For example, you can export Chocolatin configuration to Karma.
+For example, you can export Chocolatin configuration to Karma like the Angular 2 demo.
 
 ### How i can add static assets in my project ?
 
