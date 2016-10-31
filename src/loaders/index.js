@@ -8,7 +8,6 @@ const CssExtract = require('./css-extract.loader.js');
 const CssInline = require('./css-inline.loader.js');
 const Html = require('./html.loader.js');
 const HtmlRaw = require('./html-raw.loader.js');
-const IstanbulInstrumenter = require('./istanbul-instrumenter.loader.js');
 const Js = require('./js.loader.js');
 const Json = require('./json.loader.js');
 const Jsx = require('./jsx.loader.js');

@@ -139,7 +139,6 @@ Available loaders:
 - CssInline : handle CSS and inline them in document head.
 - Html : handle HTML.
 - HtmlRaw : handle HTML as string.
-- IstanbulInstrumenter : handle Istanbul instrumenter reporter for testing coverage.
 - Js : handle JavaScript classicly and add linter.
 - Json : handle JSON as file.
 - Jsx : handle ES6 with Babel (stage-2), support React JSX and add linter.
