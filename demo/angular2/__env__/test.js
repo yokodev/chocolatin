@@ -2,7 +2,7 @@
 
 const {
   provide,
-  loaders: { AssetsUrl, TypeScript, HtmlRaw, Sass },
+  loaders: { AssetsUrl, TypeScriptNg2, HtmlRaw, Sass },
   plugins: {
     Define,
     DevTool,
@@ -14,7 +14,7 @@ const { TEST } = require('./metadata');
 
 module.exports = provide({
   mixins: [],
-  loaders: [AssetsUrl, TypeScript, Sass, HtmlRaw],
+  loaders: [AssetsUrl, TypeScriptNg2, Sass, HtmlRaw],
   plugins: [
     Define('test', TEST),
     DevTool(true),
