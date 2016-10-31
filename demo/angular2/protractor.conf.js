@@ -23,7 +23,7 @@ exports.config = {
       'args': ['show-fps-counter=true'],
     },
   },
-  onPrepare: function() {
+  onPrepare: () => {
     browser.ignoreSynchronization = true;
   },
   useAllAngular2AppRoots: true,
