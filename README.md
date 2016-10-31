@@ -239,6 +239,12 @@ node ./build.js
 
 # FAQ
 
+### How i can export Chocolatin configuration to WebPack 2 configuration ?
+
+Simply use "provide" function.
+
+For example, you can export Chocolatin configuration to Karma.
+
 ### How i can add static assets in my project ?
 
 Use Copy plugin : it take an array of object with from/to properties.
