@@ -7,4 +7,8 @@ module.exports = {
     API_URL: 'http://www.google.fr',
     BASE_URL: '/',
   },
+  TEST: {
+    API_URL: 'http://localhost:1337',
+    BASE_URL: '/',
+  }
 };
