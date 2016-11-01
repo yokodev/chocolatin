@@ -13,7 +13,7 @@ const wrapper = {
 const pre = {};
 
 const loader = {
-  test: /\.styl/,
+  test: /\.styl$/,
   loaders: ['style', 'css', 'postcss', 'stylus'],
 };
 

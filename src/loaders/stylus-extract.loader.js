@@ -14,7 +14,7 @@ const wrapper = {
 const pre = {};
 
 const loader = {
-  test: /\.styl/,
+  test: /\.styl$/,
   loader: extract(['css', 'postcss', 'stylus']),
 };
 
