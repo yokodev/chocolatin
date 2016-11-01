@@ -4,7 +4,19 @@ const {
   burn,
   mixins: { Io },
   loaders: { AssetsUrl, Babel, CssExtract },
-  plugins: { Clean, Define, ProgressBar, Minify, AssetsGenerator, HtmlGenerator, Chunk, DevTool, Extract, Md5Hash },
+  plugins: {
+    Analyzer,
+    Clean,
+    Define,
+    ProgressBar,
+    Minify,
+    AssetsGenerator,
+    HtmlGenerator,
+    Chunk,
+    DevTool,
+    Extract,
+    Md5Hash,
+  },
 } = require('chocolatin');
 
 const { PROD } = require('./metadata');
@@ -25,6 +37,7 @@ burn({
     Chunk({ name: 'vendor', filename: 'vendor.[hash:8].js' }),
     DevTool(false),
     AssetsGenerator(),
+    Analyzer(),
     ProgressBar(),
     Minify(),
     Extract(),
