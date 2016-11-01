@@ -26,6 +26,5 @@ function requireAll(requireContext) {
     .map(requireContext);
 }
 
-/* eslint-disable no-unused-vars */
 // Requires and returns all modules that match
 const modules = requireAll(testContext);

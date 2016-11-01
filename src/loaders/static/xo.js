@@ -9,6 +9,7 @@ const XO_JS = {
     'exports': 'always-multiline',
     'functions': 'ignore',
   }],
+  'no-unused-vars': 0,
 };
 
 const XO_BABEL = XO_JS;
