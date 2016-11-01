@@ -3,7 +3,7 @@
 const {
   burn,
   mixins: { Io },
-  loaders: { AssetsUrl, BabelStage2Decorators, StylusExtract, CssExtract, HtmlRaw },
+  loaders: { AssetsUrl, BabelStage2Decorators, SassExtract, CssExtract, HtmlRaw },
   plugins: {
     Analyzer,
     Clean,
@@ -29,7 +29,7 @@ burn({
       'web'
     ),
   ],
-  loaders: [AssetsUrl, BabelStage2Decorators, StylusExtract, CssExtract, HtmlRaw],
+  loaders: [AssetsUrl, BabelStage2Decorators, SassExtract, CssExtract, HtmlRaw],
   plugins: [
     Clean(['dist']),
     Define('production', PROD),
@@ -38,7 +38,7 @@ burn({
     Chunk({ name: 'vendor', filename: '[name].[hash:8].js' }),
     AssetsGenerator(),
     ProgressBar(),
-    Minify(),
+    Minify(false), // Disable mangle
     Analyzer(),
     Extract(),
     Md5Hash(),

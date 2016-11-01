@@ -4,7 +4,7 @@ const autoprefixer = require('autoprefixer');
 const mqPacker = require('css-mqpacker');
 const cssComb = require('postcss-csscomb');
 
-const ext = ['.stylus'];
+const ext = ['.styl'];
 
 const wrapper = {
   postcss: [autoprefixer({ browsers: ['last 2 versions', 'ie > 8'] }), mqPacker(), cssComb()],
@@ -13,7 +13,7 @@ const wrapper = {
 const pre = {};
 
 const loader = {
-  test: /\.stylus$/,
+  test: /\.styl$/,
   loaders: ['to-string', 'css', 'postcss', 'stylus'],
 };
 

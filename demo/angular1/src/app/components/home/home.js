@@ -1,8 +1,8 @@
 import inject from 'ng-inject';
 
 @inject('test')
-class NetflixHome {
-  message = 'Hello World ! This is NetflixHome component !';
+class Home {
+  message = 'Hello World ! This is home component !';
 
   ngOnInit() {
     console.log(this.message);
@@ -10,4 +10,4 @@ class NetflixHome {
   }
 }
 
-export default NetflixHome;
+export default Home;

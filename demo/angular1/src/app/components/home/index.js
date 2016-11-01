@@ -1,6 +1,6 @@
 import controller from './home';
 import template from './home.html';
-import './home.styl';
+import './home.scss';
 
 export default {
   bindings: {},
