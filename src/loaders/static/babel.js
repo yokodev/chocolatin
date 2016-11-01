@@ -1,4 +1,4 @@
-const generator = (plugins = [], presets = []) => ({
+const generator = (presets = [], plugins = []) => ({
   presets: [
     ['es2015', { 'modules': false }],
     ...presets,
