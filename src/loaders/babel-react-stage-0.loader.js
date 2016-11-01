@@ -1,6 +1,6 @@
 'use strict';
 
-const { XO_REACT } = require('./static/xo');
+const { XO_BABEL } = require('./static/xo');
 const { BABEL_STAGE_0_REACT } = require('./static/babel');
 
 const ext = ['.js', '.jsx'];
@@ -12,7 +12,7 @@ const wrapper = {
     envs: ['node', 'browser'],
     plugins: ['react'],
     globals: ['METADATA', 'ENV', 'NODE_ENV'],
-    rules: XO_REACT,
+    rules: XO_BABEL,
   },
 };
 
