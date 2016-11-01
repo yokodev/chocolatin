@@ -1,6 +1,6 @@
 'use strict';
 
-const { TSLINT_NG2 } = require('./static/tslint');
+const { TSLINT } = require('./static/tslint');
 
 const ext = ['.js', '.ts'];
 
@@ -8,7 +8,7 @@ const wrapper = {
   tslint: {
     emitErrors: true,
     failOnHint: true,
-    configuration: TSLINT_NG2,
+    configuration: TSLINT,
   },
 };
 
