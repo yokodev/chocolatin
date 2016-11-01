@@ -11,6 +11,7 @@ const wrapper = {
     space: true,
     envs: ['node', 'browser'],
     globals: ['METADATA', 'ENV', 'NODE_ENV'],
+    parser: 'babel-eslint',
     rules: XO_BABEL,
   },
 };
