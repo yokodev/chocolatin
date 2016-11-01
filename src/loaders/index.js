@@ -32,7 +32,6 @@ module.exports = {
   CssInline,
   Html,
   HtmlRaw,
-  IstanbulInstrumenter,
   Js,
   Json,
   Jsx,
