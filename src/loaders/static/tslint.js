@@ -1,3 +1,5 @@
+'use strict';
+
 const TSLINT = {
   "rules": {
     "member-access": false,
