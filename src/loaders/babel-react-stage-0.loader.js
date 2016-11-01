@@ -1,31 +1,32 @@
 'use strict';
 
-const { XO_BABEL } = require('./static/xo');
-const { BABEL } = require('./static/babel');
+const { XO_REACT } = require('./static/xo');
+const { BABEL_STAGE_0_REACT } = require('./static/babel');
 
-const ext = ['.js'];
+const ext = ['.js', '.jsx'];
 
 const wrapper = {
   xo: {
     esnext: true,
     space: true,
     envs: ['node', 'browser'],
+    plugins: ['react'],
     globals: ['METADATA', 'ENV', 'NODE_ENV'],
-    rules: XO_BABEL,
+    rules: XO_REACT,
   },
 };
 
 const pre = {
-  test: /\.js$/,
+  test: /\.(js|jsx)$/,
   loader: 'xo',
   exclude: /node_modules/,
 };
 
 const loader = {
-  test: /\.js$/,
+  test: /\.(js|jsx)$/,
   loader: 'babel',
   exclude: /node_modules/,
-  query: BABEL,
+  query: BABEL_STAGE_0_REACT,
 };
 
 const post = {};

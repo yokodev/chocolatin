@@ -1,7 +1,7 @@
 'use strict';
 
 const { XO_BABEL } = require('./static/xo');
-const { BABEL } = require('./static/babel');
+const { BABEL_STAGE_2 } = require('./static/babel');
 
 const ext = ['.js'];
 
@@ -25,7 +25,7 @@ const loader = {
   test: /\.js$/,
   loader: 'babel',
   exclude: /node_modules/,
-  query: BABEL,
+  query: BABEL_STAGE_2,
 };
 
 const post = {};
