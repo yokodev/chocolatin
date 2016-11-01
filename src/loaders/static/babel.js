@@ -1,3 +1,5 @@
+'use strict';
+
 const generator = (presets = [], plugins = []) => ({
   presets: [
     ['es2015', { 'modules': false }],
