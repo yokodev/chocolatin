@@ -173,6 +173,7 @@ They return a function who will take WebPack configuration as argument (with mix
 
 Available plugins :
 
+- Analyzer : analyze your build size with statistic heatmap.
 - AssetsGenerator : create assets.json file with assets path.
 - Browser : start browser after compilation.
 - Chunk : chunk and split code.
@@ -192,7 +193,9 @@ Available plugins :
 - ProgressBar : add progress bar in compilation.
 - Provide : provide external module in global scope (useful for jQuery or external old-lib).
 
-# Node.js "Hello world"
+# The Node.js "Hello world"
+
+- Make a new project.
 
 ```sh
 npm init
@@ -201,12 +204,16 @@ mkdir src
 touch build.js src/index.js
 ```
 
+- Make new file to test.
+
 ```js
 // src/index.js
 'use strict';
 
 console.log('Hello world');
 ```
+
+- Make Chocolatin configuration.
 
 ```js
 // build.js
@@ -216,22 +223,26 @@ const {
   burn,
   mixins: { Io },
   loaders: { Js },
-  plugins: { Clean, Define, ProgressBar, Minify },
+  plugins: { Analyzer, Clean, Define, ProgressBar, Minify },
 } = require('chocolatin');
 
 burn({
   mixins: [
+    // We take src/index.js, output them in ./dist as app.js, for Node.js
     Io({ app: ['./src/index.js'] }, { path: './dist', filename: '[name].js' }, 'node'),
   ],
-  loaders: [Js],
+  loaders: [Js], // Handle JavaScript file and add linter
   plugins: [
-    Clean(['dist']),
-    Define('production'),
-    ProgressBar(),
-    Minify(),
+    Clean(['dist']), // Remove old dist files
+    Define('production'), // Set ENV/NODE_ENV === 'production'
+    ProgressBar(), // Add progress bar
+    Analyzer(), // Analyzer statistic
+    Minify(), // Minify output
   ],
 });
 ```
+
+- Build
 
 ```sh
 node ./build.js

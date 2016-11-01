@@ -1,5 +1,6 @@
 'use strict';
 
+const Analyzer = require('./analyzer.plugin.js');
 const AssetsGenerator = require('./assets.plugin.js');
 const Browser = require('./browser.plugin.js');
 const Chunk = require('./chunk.plugin.js');
@@ -20,6 +21,7 @@ const ProgressBar = require('./progress-bar.plugin.js');
 const Provide = require('./provide.plugin.js');
 
 module.exports = {
+  Analyzer,
   AssetsGenerator,
   Browser,
   Chunk,

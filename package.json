@@ -1,6 +1,6 @@
 {
   "name": "chocolatin",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Make life in your project : build, start, dance.",
   "scripts": {
     "lint": "npm run xo -- ./src",
@@ -81,6 +81,7 @@
     "webpack-browser-plugin": "^1.0.12",
     "webpack-dashboard": "^0.2.0",
     "webpack-dev-server": "^2.1.0-beta.5",
+    "webpack-bundle-analyzer": "^1.3.0",
     "webpack-md5-hash": "0.0.5",
     "xo": "^0.17.0",
     "xo-loader": "^0.7.0"
