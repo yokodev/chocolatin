@@ -151,6 +151,7 @@ Available loaders:
 - BabelStage1Decorators : handle ES6/ES7 with Babel + stage-1 + decorators and add linter.
 - BabelStage2Decorators : handle ES6/ES7 with Babel + stage-2 + decorators and add linter.
 - BabelReact : handle ES/ES7 with Babel + React JSX and add linter.
+- BabelReactDecorators : handle ES/ES7 with Babel + React JSX + decorators and add linter.
 - BabelReactStage0 : handle ES/ES7 with Babel + React JSX + stage-0 and add linter.
 - BabelReactStage1 : handle ES/ES7 with Babel + React JSX + stage-1 and add linter.
 - BabelReactStage2 : handle ES/ES7 with Babel + React JSX + stage-2 and add linter.
