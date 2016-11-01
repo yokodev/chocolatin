@@ -193,7 +193,7 @@ Available plugins :
 - ProgressBar : add progress bar in compilation.
 - Provide : provide external module in global scope (useful for jQuery or external old-lib).
 
-# The Node.js "Hello world"
+# The Node.js Babel "Hello world"
 
 - Make a new project.
 
@@ -208,9 +208,18 @@ touch build.js src/index.js
 
 ```js
 // src/index.js
-'use strict';
+const myAsyncTask = () =>
+  new Promise(resolve =>
+    setTimeout(() => resolve('Async result'), 2000)
+  );
 
-console.log('Hello world');
+const main = async() => {
+  const result = await myAsyncTask();
+
+  console.log(`Result : ${result}`);
+};
+
+main();
 ```
 
 - Make Chocolatin configuration.
@@ -231,7 +240,7 @@ burn({
     // We take src/index.js, output them in ./dist as app.js, for Node.js
     Io({ app: ['./src/index.js'] }, { path: './dist', filename: '[name].js' }, 'node'),
   ],
-  loaders: [Js], // Handle JavaScript file and add linter
+  loaders: [Babel], // Handle JavaScript file and Babel and linter
   plugins: [
     Clean(['dist']), // Remove old dist files
     Define('production'), // Set ENV/NODE_ENV === 'production'
