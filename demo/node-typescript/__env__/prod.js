@@ -3,21 +3,23 @@
 const {
   burn,
   mixins: { Io },
-  loaders: { BabelStage2 },
-  plugins: { Clean, Define, ProgressBar, Minify },
+  loaders: { TypeScript },
+  plugins: { Analyzer, Clean, Define, ProgressBar, Minify, ForkChecker },
 } = require('chocolatin');
 
 const { PROD } = require('./metadata');
 
 burn({
   mixins: [
-    Io({ app: ['./src/index.js'] }, { path: './dist', filename: '[name].js' }, 'node'),
+    Io({ app: ['./src/index.ts'] }, { path: './dist', filename: '[name].js', }, 'node'),
   ],
-  loaders: [BabelStage2],
+  loaders: [TypeScript],
   plugins: [
     Clean(['dist']),
     Define('production', PROD),
     ProgressBar(),
+    Analyzer(),
     Minify(),
+    ForkChecker(),
   ],
 });

@@ -1,13 +1,13 @@
 {
   "scripts": {
-    "start": "webpack-dashboard -- node ./config.dev.js",
-    "build": "node ./config.prod.js",
+    "start": "webpack-dashboard -- node ./__env__/dev.js",
+    "build": "node ./__env__/prod.js",
     "webpack-dashboard": "webpack-dashboard"
   },
   "author": "Meillet Robin <robin.meillet@epitech.eu>",
   "license": "MIT",
   "devDependencies": {
-    "chocolatin": "^1.2.5",
+    "chocolatin": "^1.2.7",
     "webpack-dashboard": "^0.2.0"
   }
 }

@@ -4,7 +4,7 @@ const {
   burn,
   mixins: { Io },
   loaders: { Js },
-  plugins: { Clean, Define, ProgressBar, Minify },
+  plugins: { Analyzer, Clean, Define, ProgressBar, Minify },
 } = require('chocolatin');
 
 const { PROD } = require('./metadata');
@@ -18,6 +18,7 @@ burn({
     Clean(['dist']),
     Define('production', PROD),
     ProgressBar(),
+    Analyzer(),
     Minify(),
   ],
 });

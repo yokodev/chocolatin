@@ -5,6 +5,7 @@ const {
   mixins: { Io },
   loaders: { AssetsUrl, TypeScript, CssExtract },
   plugins: {
+    Analyzer,
     Clean,
     Define,
     ProgressBar,
@@ -41,6 +42,7 @@ burn({
     Minify(),
     Extract(),
     Md5Hash(),
+    Analyzer(),
     Extract(),
     ForkChecker(),
   ],
