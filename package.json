@@ -1,6 +1,6 @@
 {
   "name": "chocolatin",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "Make life in your project : build, start, dance.",
   "scripts": {
     "lint": "npm run xo -- ./src",
@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/kMeillet/chocolatin/#readme",
   "jest": {
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.js$",
+    "testRegex": "/__tests__/.*.js$",
     "moduleFileExtensions": [
       "js"
     ]
