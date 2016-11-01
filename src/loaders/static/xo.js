@@ -1,3 +1,5 @@
+'use strict';
+
 const XO_JS = {
   'object-curly-spacing': 0,
   'import/no-unresolved': 0,
