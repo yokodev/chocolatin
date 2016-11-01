@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "start": "webpack-dashboard -- node ./config.dev.js",
-    "build": "node ./config.prod.js",
+    "start": "webpack-dashboard -- node ./__env__/config.dev.js",
+    "build": "node ./__env__/config.prod.js",
     "webpack-dashboard": "webpack-dashboard"
   },
   "author": "Meillet Robin <robin.meillet@epitech.eu>",

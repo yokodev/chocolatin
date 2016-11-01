@@ -3,7 +3,7 @@
 const {
   watch,
   mixins: { Io },
-  loaders: { Babel },
+  loaders: { BabelStage2 },
   plugins: { Define, NoError },
 } = require('chocolatin');
 
@@ -13,7 +13,7 @@ watch({
   mixins: [
     Io({ app: ['./src/index.js'] }, { path: './dist', filename: '[name].js' }, 'node'),
   ],
-  loaders: [Babel],
+  loaders: [BabelStage2],
   plugins: [
     Define('development', DEV),
     NoError(),

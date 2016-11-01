@@ -3,7 +3,7 @@
 const {
   server,
   mixins: { Io },
-  loaders: { AssetsUrl, Babel, StylusInline, CssInline, HtmlRaw },
+  loaders: { AssetsUrl, BabelStage2Decorators, StylusInline, CssInline, HtmlRaw },
   plugins: {
     Define,
     NoError,
@@ -29,7 +29,7 @@ server({
       'web'
     ),
   ],
-  loaders: [AssetsUrl, Babel, StylusInline, CssInline, HtmlRaw],
+  loaders: [AssetsUrl, BabelStage2Decorators, StylusInline, CssInline, HtmlRaw],
   plugins: [
     Define('development', DEV),
     HtmlGenerator('./src/index.html'),

@@ -3,7 +3,7 @@
 const {
   server,
   mixins: { Io },
-  loaders: { AssetsUrl, JsxFp, CssInline },
+  loaders: { AssetsUrl, BabelReactStage2, CssInline },
   plugins: { Define, NoError, Browser, DevTool, HtmlGenerator, Hmr, Dashboard, Chunk },
 } = require('chocolatin');
 
@@ -20,7 +20,7 @@ server({
       'web'
     ),
   ],
-  loaders: [AssetsUrl, JsxFp, CssInline],
+  loaders: [AssetsUrl, BabelReactStage2, CssInline],
   plugins: [
     Define('development', DEV),
     HtmlGenerator('./src/index.html'),

@@ -3,7 +3,7 @@
 const {
   burn,
   mixins: { Io },
-  loaders: { AssetsUrl, Babel, StylusExtract, CssExtract, HtmlRaw },
+  loaders: { AssetsUrl, BabelStage2Decorators, StylusExtract, CssExtract, HtmlRaw },
   plugins: {
     Analyzer,
     Clean,
@@ -29,7 +29,7 @@ burn({
       'web'
     ),
   ],
-  loaders: [AssetsUrl, Babel, StylusExtract, CssExtract, HtmlRaw],
+  loaders: [AssetsUrl, BabelStage2Decorators, StylusExtract, CssExtract, HtmlRaw],
   plugins: [
     Clean(['dist']),
     Define('production', PROD),

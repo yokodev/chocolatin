@@ -3,7 +3,7 @@
 const {
   burn,
   mixins: { Io },
-  loaders: { AssetsUrl, JsxFp, CssExtract },
+  loaders: { AssetsUrl, BabelReactStage2, CssExtract },
   plugins: { Clean, Define, ProgressBar, Minify, AssetsGenerator, HtmlGenerator, Chunk, DevTool, Extract, Md5Hash },
 } = require('chocolatin');
 
@@ -17,8 +17,9 @@ burn({
       'web'
     ),
   ],
-  loaders: [AssetsUrl, JsxFp, CssExtract],
+  loaders: [AssetsUrl, BabelReactStage2, CssExtract],
   plugins: [
+    Analyzer(),
     Clean(['dist']),
     Define('production', PROD),
     HtmlGenerator('./src/index.html'),
