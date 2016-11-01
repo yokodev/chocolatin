@@ -24,7 +24,7 @@ module.exports = config => {
     singleRun: true,
   };
 
-  if (process.env.TRAVIS) {
+  if (process.env.TRAVIS || process.env.CI) {
     configuration.browsers = ['ChromeTravisCi'];
   }
 
