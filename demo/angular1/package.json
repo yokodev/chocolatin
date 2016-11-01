@@ -29,7 +29,7 @@
     "webpack-dashboard": "^0.2.0"
   },
   "dependencies": {
-    "angular": "^1.5.5",
+    "angular": "^1.5.8",
     "angular-ui-router": "^0.3.1",
     "ng-inject": "^1.0.0"
   }
