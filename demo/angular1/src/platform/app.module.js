@@ -8,7 +8,7 @@ import routes from './app.routes';
 const moduleName = 'app';
 
 angular
-  .module(moduleName, [...providers, ...components, router])
+  .module(moduleName, [providers, components, router])
   .config(($stateProvider, $locationProvider, $urlRouterProvider) => {
     $locationProvider.html5Mode(true);
     $urlRouterProvider.otherwise(routes.default);
