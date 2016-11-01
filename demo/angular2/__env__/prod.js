@@ -5,6 +5,7 @@ const {
   mixins: { Io },
   loaders: { AssetsUrl, TypeScriptNg2, HtmlRaw, Sass, CssExtract },
   plugins: {
+    Analyzer,
     Clean,
     Define,
     ProgressBar,
@@ -40,6 +41,7 @@ burn({
     Chunk({ name: 'vendor', filename: '[name].[hash:8].js' }),
     AssetsGenerator(),
     ProgressBar(),
+    Analyzer(),
     Minify(),
     Extract(),
     Md5Hash(),
