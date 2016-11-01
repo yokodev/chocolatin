@@ -21,7 +21,7 @@
     "@types/node": "^6.0.46",
     "@types/protractor": "^1.5.20",
     "@types/selenium-webdriver": "2.44.29",
-    "chocolatin": "^1.2.7",
+    "chocolatin": "^1.2.8",
     "jasmine-core": "^2.5.2",
     "karma": "^1.3.0",
     "karma-chrome-launcher": "^2.0.0",
