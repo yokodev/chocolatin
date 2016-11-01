@@ -4,13 +4,13 @@
 
 When you start with WebPack, you need to :
 
-- Install a lot of package (loaders, plugins, ...).
+- Install a lot of package (loaders, plugins, transpiler, ...).
 - Make WebPack configuration with messy deep object in different environment (dev, prod, testing, ...).
 - Setup external tools configuration (linter, .babelrc file, ...).
 
-Chocolatin help developers to leverage friction & time-lost with WebPack configuration. Focus on project instead of build system.
+Chocolatin help developers to leverage friction & time-lost with WebPack configuration : focus on project instead of build system.
 
-We use more functional way to describe your app, with low object configuration.
+We use more functional way to describe your app, with little object configuration.
 
 # How to install
 
@@ -53,13 +53,15 @@ Then, simply run file with Node.js :
 node ./build.js
 ```
 
-You can ship the "demo" directory for some example in different environment with Babel, TypeScript, Node.js, Angular 2, React, Electron, ...
+You can ship the "demo" directory for some example in different environment with Babel, TypeScript, Node.js, Angular 1 or 2, React, Electron, ...
 
 # Public API
 
 ##### provide({ mixins: Array\<Object>, loaders: Array\<Object>, plugins: Array\<Function> )): WebPack Configuration
 
-Provide take Chocolatin configuration and transform it into WebPack 2 configuration.
+Provide take Chocolatin configuration and transform into WebPack 2 configuration.
+
+Start with Node.js :
 
 ```sh
 node ./build.js
@@ -69,6 +71,8 @@ node ./build.js
 
 Burn take Chocolatin configuration and build them with WebPack.
 
+Start with Node.js :
+
 ```sh
 node ./build.js
 ```
@@ -76,6 +80,8 @@ node ./build.js
 ##### watch({ mixins: Array\<Object>, loaders: Array\<Object>, plugins: Array\<Function> )): WebPack Watcher
 
 Watch take Chocolatin configuration and watch files with WebPack.
+
+Start with Node.js :
 
 ```sh
 node ./build.js
@@ -87,11 +93,13 @@ Server take Chocolatin configuration and create server on http://localhost:3000.
 
 You can use Hmr plugins to start Hot Module replacement.
 
+Start with Node.js :
+
 ```sh
 node ./build.js
 ```
 
-If you need better design, install "webpack-dashboard" npm package in your project and start server with :
+If you need better design, install "webpack-dashboard" npm package in your project, add Dashboard plugin and and start server with :
 
 ```sh
 webpack-dashboard -- node ./build.js
@@ -122,27 +130,40 @@ That's all. You can make your own mixin if you need to share and dispatch your o
 
 Loader handle file in your project.
 
-Basicly, it's just an object with 4 props :
+Basicly, it's just an object with 5 props :
 
-- wrap : options.
-- pre : preloader configuration
-- loader : loader configuration.
-- post : postloader configuration.
+- ext : a list of extension to handle.
+- wrap : an object with loader options.
+- pre : preloader WebPack configuration
+- loader : loader WebPack configuration.
+- post : postloader WebPack configuration.
 
 Available loaders: 
 
 - AssetsFile : handle assets as file.
 - AssetsUrl : handle assets as url (base64), or file if they're to big.
-- Babel : handle ES6 with Babel (stage-2) and add linter.
+- Babel : handle ES6/ES7 with Babel and add linter.
+- BabelStage0 : handle ES6/ES7 with Babel + stage-0 and add linter.
+- BabelStage1 : handle ES6/ES7 with Babel + stage-1 and add linter.
+- BabelStage2 : handle ES6/ES7 with Babel + stage-2 and add linter.
+- BabelDecorators : handle ES6/ES7 with Babel + decorators and add linter.
+- BabelStage0Decorators : handle ES6/ES7 with Babel + stage-0 + decorators and add linter.
+- BabelStage1Decorators : handle ES6/ES7 with Babel + stage-1 + decorators and add linter.
+- BabelStage2Decorators : handle ES6/ES7 with Babel + stage-2 + decorators and add linter.
+- BabelReact : handle ES/ES7 with Babel + React JSX and add linter.
+- BabelReactStage0 : handle ES/ES7 with Babel + React JSX + stage-0 and add linter.
+- BabelReactStage1 : handle ES/ES7 with Babel + React JSX + stage-1 and add linter.
+- BabelReactStage2 : handle ES/ES7 with Babel + React JSX + stage-2 and add linter.
+- BabelReactStage0Decorators : handle ES/ES7 with Babel + React JSX + stage-0 + decorators and add linter.
+- BabelReactStage1Decorators : handle ES/ES7 with Babel + React JSX + stage-1 + decorators and add linter.
+- BabelReactStage2Decorators : handle ES/ES7 with Babel + React JSX + stage-2 + decorators and add linter.
 - Css : handle CSS as string.
 - CssExtract : handle CSS and extract in output file.
 - CssInline : handle CSS and inline them in document head.
 - Html : handle HTML.
 - HtmlRaw : handle HTML as string.
-- Js : handle JavaScript classicly and add linter.
+- Js : handle JavaScript (without transpiler) and add linter.
 - Json : handle JSON as file.
-- Jsx : handle ES6 with Babel (stage-2), support React JSX and add linter.
-- JsxFp : handle ES6 with Babel (stage-2), support React JSX and add linter with FP programing hard-rules.
 - Pug : handle Jade/Pug file.
 - Sass : handle SCSS as string.
 - SassExtract : handle SCSS and extract in output file.
@@ -156,11 +177,11 @@ Available loaders:
 
 Nota :
 
-- Babel use stage-2 : you can use async/await, generator, ...
-- Class decorator isn't available without TypeScript or polyfill.
-- Css/Sass/Stylus loader have super-power : autoprefixer, group media-query and sort CSS properties.
-- We use Xo linter for JavaScript (or Tslint with TypeScript).
-- Unused code is removed with three-shaking.
+- For Angular2, use TypeScriptNg2 loader.
+- Class decorator is available with TypeScript or Babel if you pickup a "Decorators" loader.
+- Css/Sass/Stylus loader and they're brothers have super-power : autoprefixer, group media-query and sort CSS properties.
+- We use Xo linter for JavaScript/Babel (or Tslint with TypeScript).
+- Unused code is removed with three-shaking and module transformation.
 
 # Plugins
 
@@ -173,7 +194,7 @@ They return a function who will take WebPack configuration as argument (with mix
 
 Available plugins :
 
-- Analyzer : analyze your build size with statistic heatmap.
+- Analyzer : analyze your build size with statistic heat-map. Disabled in CI (Travis/GitLab).
 - AssetsGenerator : create assets.json file with assets path.
 - Browser : start browser after compilation.
 - Chunk : chunk and split code.
@@ -193,7 +214,7 @@ Available plugins :
 - ProgressBar : add progress bar in compilation.
 - Provide : provide external module in global scope (useful for jQuery or external old-lib).
 
-# The Node.js Babel "Hello world"
+# The Node.js Babel Async "Hello world"
 
 - Make a new project.
 
@@ -210,13 +231,13 @@ touch build.js src/index.js
 // src/index.js
 const myAsyncTask = () =>
   new Promise(resolve =>
-    setTimeout(() => resolve('Async result'), 2000)
+    setTimeout(() => resolve('Hello World'), 2000)
   );
 
 const main = async() => {
   const result = await myAsyncTask();
 
-  console.log(`Result : ${result}`);
+  console.log(`Test result : ${result}`);
 };
 
 main();
@@ -228,19 +249,20 @@ main();
 // build.js
 'use strict';
 
+// Destructuring Chocolatin object
 const {
   burn,
   mixins: { Io },
-  loaders: { Js },
+  loaders: { BabelStage2 },
   plugins: { Analyzer, Clean, Define, ProgressBar, Minify },
 } = require('chocolatin');
 
 burn({
   mixins: [
-    // We take src/index.js, output them in ./dist as app.js, for Node.js
+    // We take src/index.js, output in ./dist as [name.js (so app.js), for Node.js
     Io({ app: ['./src/index.js'] }, { path: './dist', filename: '[name].js' }, 'node'),
   ],
-  loaders: [Babel], // Handle JavaScript file and Babel and linter
+  loaders: [BabelStage2], // Handle JavaScript file and add linter + Babel in stage-2 for async function
   plugins: [
     Clean(['dist']), // Remove old dist files
     Define('production'), // Set ENV/NODE_ENV === 'production'
@@ -251,7 +273,7 @@ burn({
 });
 ```
 
-- Build
+- Build.
 
 ```sh
 node ./build.js
@@ -263,13 +285,19 @@ node ./build.js
 
 Simply use "provide" function.
 
-For example, you can export Chocolatin configuration to Karma like the Angular 2 demo.
+For example, you can export Chocolatin configuration to Karma like the Angular demo.
 
 ### How i can add static assets in my project ?
 
 Use Copy plugin : it take an array of object with from/to properties.
 
 You can copy directory or files.
+
+### How i can manage template and style with Angular 1 ?
+
+Import style and template in component declaration.
+
+Checkout Angular 1 demo project.
 
 ### How i can manage template and style with Angular 2 ?
 
@@ -283,12 +311,9 @@ Use Babel or TypeScript loader.
 
 You don't need to add linter.
 
-We use Xo for JavaScript/Babel/Jsx/JsxFp loaders and TsLint for TypeScript/TypeScriptNg2 loaders.
+We use Xo for JavaScript and TsLint for TypeScript.
 
 ### How i can override linter rules ?
-
-- For TypeScript, just make tslint.json file.
-- For JavaScript, Babel or Jsx/JsxFp, you can't.
 
 We will do later fix on loaders to make them more configurable.
 
@@ -303,3 +328,5 @@ Make tsconfig.json file.
 ### How i can build multiple configuration for mono-repository big project ?
 
 You can't, we will provide this later.
+
+For now, just use "provide" function.
