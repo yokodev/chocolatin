@@ -34,6 +34,7 @@ const StylusExtract = require('./stylus-extract.loader.js');
 const StylusInline = require('./stylus-inline.loader.js');
 const TypeScript = require('./ts.loader.js');
 const TypeScriptNg2 = require('./ts-ng2.loader.js');
+const TypeScriptNg2Lazy = require('./ts-ng2-lazy.loader.js');
 const Vue = require('./vue.loader.js');
 
 module.exports = {
@@ -71,5 +72,6 @@ module.exports = {
   StylusInline,
   TypeScript,
   TypeScriptNg2,
+  TypeScriptNg2Lazy,
   Vue,
 };

@@ -174,6 +174,7 @@ Available loaders:
 - StylusInline : handle Stylus and inline them in document head.
 - TypeScript : handle TypeScript and add linter.
 - TypeScriptNg2 : handle TypeScript, Angular 2 template/style loader and add linter.
+- TypeScriptNg2Lazy : handle TypeScript, Angular 2 template/style loader + lazy loading module and add linter.
 - Vue : handle Vue file.
 
 Nota :
