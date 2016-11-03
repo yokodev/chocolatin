@@ -332,3 +332,9 @@ Make tsconfig.json file.
 You can't, we will provide this later.
 
 For now, just use "provide" function.
+
+# Roadmap v1.4
+
+- Configurable loaders.
+- Parallel build.
+- More plugins & loaders.
